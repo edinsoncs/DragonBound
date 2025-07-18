@@ -4,7 +4,7 @@
   "description": "DragonBoundRe - Remake of the original DragonBound game",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"node src/web/main/server.js\" \"node src/game.js\"",
+    "start": "node index.js",
     "start:web": "node src/web/main/server.js",
     "start:game": "node src/game.js",
     "dev:web": "nodemon --exitcrash src/web/main/server.js",
