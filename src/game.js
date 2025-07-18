@@ -11,7 +11,7 @@ var self = this;
 Logger.Init("game.txt");
 this.db = new DataBase();
 mapControll = new MapController(loadx);
-server = new ws(9001);
+server = new ws(process.env.PORT);
 ip_actions = {};
 this.pending_messages = {};
 this.last_account_info = {};
