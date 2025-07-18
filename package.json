@@ -4,7 +4,7 @@
   "description": "DragonBoundRe - Remake of the original DragonBound game",
   "main": "index.js",
   "scripts": {
-    "start": "node src/web/main/server.js",
+    "start": "concurrently \"node src/web/main/server.js\" \"node src/game.js\"",
     "start:web": "node src/web/main/server.js",
     "start:game": "node src/game.js",
     "dev:web": "nodemon --exitcrash src/web/main/server.js",
@@ -38,6 +38,7 @@
   ],
   "dependencies": {
     "body-parser": "^1.20.2",
+    "concurrently": "^8.2.0",
     "colors": "^1.4.0",
     "cookie-parser": "^1.4.6",
     "csurf": "^1.11.0",
