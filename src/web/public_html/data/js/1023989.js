@@ -41199,13 +41199,13 @@
               "" == n.name &&
               ((k = !0),
               (n.text =
-                'ThorBound - <a href="" target="_blank">' +
-                l.t("Forums") +
-                '</a> | <a href="" target="_blank">' +
-                l.t("GroupFB") +
-                '</a> | <a href="https://ya.mba/" target="_blank">' +
-                l.t("YouTube") +
-                '</a> | <a href="/discord" target="_blank">Discord</a> | <a href="" target="_blank">Instagram</a> | <a href="https://twitter.com/" target="_blank">Twitter</a>'));
+                'LassieGame - <a href="https://t.me/lassiegame" target="_blank">' +
+                l.t("Telegram") +
+                '</a> | <a href="https://x.com/LassieGameEth" target="_blank">' +
+                l.t("X") +
+                '' +
+                l.t("") +
+                ''));
             ChatReceived(
               n.text,
               n.name,
