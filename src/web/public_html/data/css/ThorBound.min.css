@@ -122,7 +122,7 @@ a:active {
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
-    background-size: cover
+    background-size:cover;
 }
 
 .DialogLayer {
@@ -139,8 +139,7 @@ a:active {
     height: 16px;
     color: #acf2f6;
     font-size: 12px;
-    padding: 2px 4px;
-    background: rgb(255 255 255 / 18%);
+    background: transparent;
     border: 1px solid transparent;
     -webkit-transform-origin: center bottom;
     transform-origin: center bottom
@@ -240,12 +239,9 @@ a:active {
     top: 89px;
     width: 207px;
     height: 180px;
-    background: rgb(0 0 0 / 50%);
+    background: rgba(140,140,140,0.5);
     border-radius: 10px;
-    pointer-events: none;
-    display: block!important;
-    box-shadow: inset 0 0 26px #b21db5;
-    border: 1px solid rgb(189 40 189);
+    pointer-events: none
 }
 
 .SepH {
@@ -257,19 +253,16 @@ a:active {
 #channel {
     position: absolute;
     left: 18px;
-    top: 452px;
+    top: 458px;
     width: 537px;
     height: 116px;
     font-size: 12px;
-    border: 1px solid rgb(189 40 189);
-    border-radius: 10px;
-    color: #acf2f6;
-    box-shadow: inset 0 0 26px #b21db5;
+    color: #acf2f6
 }
 
 #channel .viewport {
-    width: 522px;
-    height: 116px;
+    width: 508px !important;
+    height: 116px !important;
     overflow: hidden;
     position: relative
 }
@@ -281,8 +274,7 @@ a:active {
     top: 0;
     margin: 0;
     word-wrap: break-word;
-    width: 522px;
-    padding: 0.5em;
+    width: 522px
 }
 
 #channel .scrollbar {
@@ -298,21 +290,15 @@ a:active {
     filter: progid:DXImageTransform.Microsoft.Glow(Strength=1,Color=#000000)
 }
 
-.zotata-chat-type1 {
-    color: #fbf9f9;
-    text-shadow: 0px 0px 2px #ff980099, 0px 0px 3px #ff830057, 0px 0px 7px #ff98005e, 0px 0px 5px #ff9b0066, 0px 0px 8px #ff980059, 0px 0px 8px #ff8f0070;
-    filter: progid:DXImageTransform.Microsoft.Glow(Strength=1,Color=#ff980059)
-}
-
 .zotata-chat-type2 {
-    color: #fff;
-    text-shadow: #ff3434 -1px 0 2px, #ff3737 0 1px 2px, #ff3535 1px 0 2px, #ff2d2d 0 -1px 2px;
+    color: #ef9c10;
+    text-shadow: #6b2918 -1px 0 2px,#6b2918 0 1px 2px,#6b2918 1px 0 2px,#6b2918 0 -1px 2px;
     filter: progid:DXImageTransform.Microsoft.Glow(Strength=1,Color=#6b2918)
 }
 
 .zotata-chat-type3 {
-    color: #fff;
-    text-shadow: #ff5f00 -1px 0 2px, #f07800 0 1px 2px, #ff8c00 1px 0 2px, #fb8900 0 -1px 2px;
+    color: #84b5ff;
+    text-shadow: #525a73 -1px 0 2px,#525a73 0 1px 2px,#525a73 1px 0 2px,#525a73 0 -1px 2px;
     filter: progid:DXImageTransform.Microsoft.Glow(Strength=1,Color=#525a73)
 }
 
@@ -333,9 +319,8 @@ a:active {
 }
 
 .zotata-chat-type6 {
-    color: #fff;
-    /*text-shadow: #de4c18 -1px 0 2px,#de4c18 0 1px 2px,#de4c18 1px 0 2px,#de4c18 0 -1px 2px;*/
-    text-shadow: #525a73 -1px 0 2px, #525a73 0 1px 2px, #525a73 1px 0 2px, #525a73 0 -1px 2px;
+    color: #ffde9c;
+    text-shadow: #de4c18 -1px 0 2px,#de4c18 0 1px 2px,#de4c18 1px 0 2px,#de4c18 0 -1px 2px;
     filter: progid:DXImageTransform.Microsoft.Glow(Strength=1,Color=#de4c18)
 }
 
@@ -384,13 +369,7 @@ a:active {
 .zotata-chat-type17 {
     color: #9ff;
     text-shadow: #00f -1px 0 1px,#00f 0 1px 1px,#00f 1px 0 1px,#00f 0 -1px 1px;
-    filter: progid:DXImageTransform.Microsoft.Glow(Strength=1,Color=#0000f)
-}
-
-.zotata-chat-type18 {
-    color: #ffffff;
-    text-shadow: -1px -1px 1px #7900fd, -1px 1px 1px #7900fd, 1px -1px 1px #7900fd, 1px 1px 1px #7900fd;
-    filter: progid:DXImageTransform.Microsoft.Glow(Strength=1,Color=#03FCFC)
+    filter: progid:DXImageTransform.Microsoft.Glow(Strength=1,Color=#0000ff);
 }
 
 .zotata-chat-icon {
@@ -528,14 +507,13 @@ a:active {
     left: 584px;
     top: 305px;
     width: 211px;
-    height: 223px;
-    box-shadow: inset 0 0 26px #b21db5;
-    border: 1px solid rgb(189 40 189);
+    height: 223px
 }
 
 #playersList .viewport {
-    width: 198px;
-    height: 223px;
+    left: 0px;
+    width: 170px !important;
+    height: 212px !important;
     overflow: hidden;
     position: relative
 }
@@ -560,8 +538,7 @@ a:active {
 .playerListItem {
     position: relative;
     margin-bottom: 3px;
-    height: 15px;
-    margin: 0.5em;
+    height: 15px
 }
 
 .playerListItemSelected {
@@ -599,7 +576,7 @@ a:active {
 
 #itemsSelection.InRoom {
     top: 256px;
-    height: 268px;
+    background-color: inherit
 }
 
 #itemsSelectText {
@@ -711,9 +688,7 @@ a:active {
     top: 0;
     padding: 0;
     margin: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.67);
-    font-size: 10px;
+    width: 100%
 }
 
 #guildMembersList .scrollbar {
@@ -725,9 +700,7 @@ a:active {
 
 .friendListItem {
     position: relative;
-    height: 30px;
-    margin: 1em 0;
-    background: rgb(255 255 255 / 21%);
+    height: 30px
 }
 
 .friendListItem.odd {
@@ -807,25 +780,22 @@ a:active {
     position: absolute;
     left: 584px;
     top: 249px;
-    width: 210px;
-    height: 38px;
-    background-color: #092041;
+    width: 190px;
+    height: 36px;
+    background-color: #39639c;
     padding: 10px;
-    display: none;
-    font-size: 10px;
+    display: none
 }
 
 #guildRoomTabExtra {
     position: absolute;
     left: 584px;
-    top: 247px;
-    width: 213px;
-    height: 50px;
-    background-color: #092041;
+    top: 249px;
+    width: 190px;
+    height: 36px;
+    background-color: #39639c;
     padding: 10px;
-    display: none;
-    line-height: 12px;
-    font-size: 10px;
+    display: none
 }
 
 .span_rank {
@@ -974,6 +944,70 @@ a:active {
 
 .rank31 {
     background-position: -130px 0
+}
+
+.rank32 {
+    background-position: -156px 0
+}
+
+.rank33 {
+    background-position: -182px 0
+}
+
+.rank34 {
+    background-position: -208px 0
+}
+
+.rank35 {
+    background-position: -234px 0
+}
+
+.rank36 {
+    background-position: -260px 0
+}
+
+.rank37 {
+    background-position: -286px 0
+}
+
+.rank38 {
+    background-position: -312px 0
+}
+
+.rank39 {
+    background-position: 0 -16px
+}
+
+.rank40 {
+    background-position: -26px -16px
+}
+
+.rank41 {
+    background-position: -52px -16px
+}
+
+.rank42 {
+    background-position: -78px -16px
+}
+
+.rank43 {
+    background-position: -104px -16px
+}
+
+.rank44 {
+    background-position: -130px -16px
+}
+
+.rank45 {
+    background-position: -156px -16px
+}
+
+.rank46 {
+    background-position: -182px -16px
+}
+
+.rank47 {
+    background-position: -208px -16px
 }
 
 .HD .rank0 {
@@ -1169,7 +1203,8 @@ a:active {
     text-align: right;
     font-size: 11px;
     font-weight: bold;
-    pointer-events: none
+    pointer-events: none;
+    z-index: 12
 }
 
 #myGold,#myGold2 {
@@ -1180,7 +1215,8 @@ a:active {
     text-align: right;
     font-size: 11px;
     font-weight: bold;
-    pointer-events: none
+    pointer-events: none;
+    z-index: 12
 }
 
 #channel_player {
@@ -1192,11 +1228,11 @@ a:active {
 
 #roomsList {
     position: absolute;
-    left: 15px;
-    top: 168px;
+    left: -14px;
+    top: 108px;
     width: 540px;
     color: white;
-    font-size: 11px
+    font-size: 11px;
 }
 
 .room {
@@ -1204,7 +1240,7 @@ a:active {
     background-position: 0 -543px;
     width: 251px;
     height: 62px;
-    display: none
+    display: none;
 }
 
 .HD .room {
@@ -1286,33 +1322,33 @@ a:active {
 }
 
 #room0 {
-    left: 0;
-    top: 0
+    left: 30px;
+    top: 60px;
 }
 
 #room1 {
-    left: 265px;
-    top: 0
+    left: 295px;
+    top: 60px;
 }
 
 #room2 {
-    left: 0;
-    top: 75px
+    left: 30px;
+    top: 135px
 }
 
 #room3 {
-    left: 265px;
-    top: 75px
+    left: 295px;
+    top: 135px
 }
 
 #room4 {
-    left: 0;
-    top: 150px
+    left: 30px;
+    top: 210px
 }
 
 #room5 {
-    left: 265px;
-    top: 150px
+    left: 295px;
+    top: 210px
 }
 
 .room:hover {
@@ -1462,10 +1498,7 @@ a:active {
 
 .HD #dialogCreateRoom {
     background-position: 0 -321px;
-    background-size: 1000px 1500px;
-    background: linear-gradient(45deg, black, transparent);
-    box-shadow: inset 0 0 26px #b21db5;
-    border: 1px solid rgb(189 40 189);
+    background-size: 1000px 1500px
 }
 
 #createRoomTitle {
@@ -1473,24 +1506,21 @@ a:active {
     left: 114px;
     top: 41px;
     width: 192px;
-    background-color: rgb(255 255 255 / 20%);
+    background-color: transparent;
     color: #acf2f6;
+    border: 0;
     height: 15px;
-    padding: 10px;
-    border-radius: 25px;
-    border: 0px solid white;
+    padding-left: 4px
 }
 
 #BrokerLogout {
     display: block;
     position: absolute;
-    /*right: 12px;*/
+    right: 12px;
     bottom: 5px;
     width: 55px;
     height: 51px;
-    background-position: -56px -303px;
-    top: 526px;
-    left: 199px
+    background-position: -56px -303px
 }
 
 .HD #BrokerLogout {
@@ -1575,7 +1605,7 @@ a:active {
 
 #buttonCreateRoom {
     position: absolute;
-    left: 226px;
+    left: 144px;
     top: 7px;
     width: 62px;
     height: 62px;
@@ -1588,7 +1618,7 @@ a:active {
 
 #buttonJoin {
     position: absolute;
-    left: 308px;
+    left: 226px;
     top: 7px;
     width: 62px;
     height: 62px;
@@ -1597,6 +1627,19 @@ a:active {
 
 .HD #buttonJoin {
     background-position: -125px 0
+}
+
+#buttonQuickJoin {
+    position: absolute;
+    left: 308px;
+    top: 7px;
+    width: 62px;
+    height: 62px;
+    background-position: -63px -177px
+}
+
+.HD #buttonQuickJoin {
+    background-position: 0 0
 }
 
 #buttonMyInfo {
@@ -1708,7 +1751,7 @@ a:active {
 #buttonQuickJoin {
     position: absolute;
     left: 308px;
-    top: 84px;
+    top: 7px;
     width: 62px;
     height: 62px;
     background-position: -63px -177px
@@ -1841,10 +1884,8 @@ a:active {
 
 #CreateRoomPrivateCheckbox {
     position: absolute;
-    left: 13px;
-    top: 64px;
-    font-size: 14px;
-    color:#a8a8a8;
+    left: 45px;
+    top: 64px
 }
 
 #CreateRoomPlayers {
@@ -1886,40 +1927,8 @@ a:active {
 #CreateRoomModeIcon {
     position: absolute;
     left: 45px;
-    top: 164px;
-    border: 1px solid black;
-    box-shadow: inset 0 0 32px black;
+    top: 164px
 }
-
-#dialogCreateRoom .roomTitleHeader h4{
-    padding: 10px 0 0 10px;
-}
-
-#dialogCreateRoom .nameRoom_Type1{
-    position: absolute;
-    top: 2.95em;
-    left: 0.85em;
-    font-size: 14px;
-    color: #a8a8a8;
-}
-
-#dialogCreateRoom .numberRoom_Type2{
-    position: absolute;
-    top: 7.95em;
-    left: 0.85em;
-    font-size: 14px;
-    color: #a8a8a8;
-}
-
-#dialogCreateRoom .modeRoom_Type3{
-    position: absolute;
-    top: 9.5em;
-    left: 0.85em;
-    font-size: 14px;
-    color: #a8a8a8;
-}
-
-
 
 .iconMode0 {
     background-position: -168px -303px;
@@ -2138,14 +2147,15 @@ a:active {
 #roomScreen {
     display: none;
     color: white;
-    font-size: 12px;
+    font-size: 12px
 }
 
 #roomNumber {
     position: absolute;
-    left: 55px;
+    left: 50px;
     top: 5px;
-    width: 30px
+    width: 30px;
+    height: 12px
 }
 
 #roomTitle {
@@ -2154,6 +2164,13 @@ a:active {
     top: 5px;
     width: 450px;
     height: 15px
+}
+
+#roomOwner {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    white-space: nowrap
 }
 
 #roomButtonBack {
@@ -2216,34 +2233,6 @@ a:active {
     background-position: -809px -495.5px
 }
 
-.buttonMobile {
-    width: 33px;
-    height: 37px;
-    background-position: 0 -28px
-}
-
-.HD .buttonMobile {
-    background-position: -752px -524px;
-    width: 35px;
-    height: 36px
-}
-
-.buttonMobile:hover {
-    background-position: -34px -28px
-}
-
-.buttonMobile:active {
-    background-position: -68px -28px
-}
-
-.HD .buttonMobile:hover {
-    background-position: -788.5px -524px
-}
-
-.HD .buttonMobile:active {
-    background-position: -825px -524px
-}
-
 #lobbyButtonMobile {
     position: absolute;
     left: 530px;
@@ -2252,8 +2241,47 @@ a:active {
 
 #roomButtonMobile {
     position: absolute;
-    left: 241px;
-    top: 345px
+    left: 240px;
+    top: 346px;
+    width: 34px;
+    height: 35px;
+    background-position: -0px -28px;
+}
+
+.HD #roomButtonMobile {
+    background-position: -752px -524px;
+    width: 35px;
+    height: 36px;
+}
+
+#roomButtonMobile:hover {
+    background-position: -34px -28px;
+}
+
+#roomButtonMobile:active {
+    background-position: -68px -28px;
+}
+
+.HD #roomButtonMobile:hover {
+    background-position: -788.5px -524px;
+}
+
+.HD #roomButtonMobile:active {
+    background-position: -825px -524px;
+}
+
+#roomPlayersA {
+    position: absolute;
+    left: 229px;
+    top: 308px;
+    font-size: 20px
+}
+
+#roomPlayersB {
+    position: absolute;
+    right: 467px;
+    top: 308px;
+    font-size: 23px
 }
 
 #roomButtonReady {
@@ -2279,7 +2307,7 @@ a:active {
 .playerInRoom {
     width: 223px;
     height: 95px;
-    display: none;
+    display: none
 }
 
 .SideA .roomPlayerRank {
@@ -2296,7 +2324,7 @@ a:active {
     top: 0;
     width: 235px;
     height: 15px;
-    z-index: 10
+    z-index: 25
 }
 
 .SideA .roomPlayerInfo {
@@ -2306,7 +2334,7 @@ a:active {
     width: 43px;
     height: 30px;
     background-position: -260px -216px;
-    z-index: 8;
+    z-index: 21;
     transform: scale(0.65) rotate(270deg)
 }
 
@@ -2326,7 +2354,7 @@ a:active {
     width: 77px;
     height: 78px;
     background-position: 0 -121px;
-    z-index: 6
+    z-index: 2
 }
 
 .HD .SideA .roomPlayerNotReady {
@@ -2340,7 +2368,7 @@ a:active {
     width: 77px;
     height: 78px;
     background-position: -78px -121px;
-    z-index: 6
+    z-index: 2
 }
 
 .HD .SideA .roomPlayerReady {
@@ -2374,8 +2402,7 @@ a:active {
     position: absolute;
     left: -3px;
     top: 67px;
-    display: none;
-    z-index: 8
+    display: none
 }
 
 .SideA .roomPlayerMobile {
@@ -2407,7 +2434,7 @@ a:active {
     top: 0;
     width: 235px;
     height: 15px;
-    z-index: 10
+    z-index: 25
 }
 
 .SideB .roomPlayerInfo {
@@ -2417,7 +2444,7 @@ a:active {
     width: 43px;
     height: 30px;
     background-position: -260px -216px;
-    z-index: 8;
+    z-index: 21;
     transform: scale(0.65) rotate(90deg)
 }
 
@@ -2432,7 +2459,7 @@ a:active {
     width: 77px;
     height: 78px;
     background-position: 0 -200px;
-    z-index: 6
+    z-index: 2
 }
 
 .HD .SideB .roomPlayerNotReady {
@@ -2446,7 +2473,7 @@ a:active {
     width: 77px;
     height: 78px;
     background-position: -78px -200px;
-    z-index: 6
+    z-index: 2
 }
 
 .HD .SideB .roomPlayerReady {
@@ -2485,7 +2512,6 @@ a:active {
     right: -3px;
     top: 67px;
     display: none;
-    z-index: 8;
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
@@ -2497,7 +2523,8 @@ a:active {
 .roomPlayerMyself {
     width: 28px;
     height: 19px;
-    background: url(data:image/gif;base64,R0lGODlhHAATANUpAAAAALWlUrWmUrWqWrWtWrWqY7WtY7WuY7Wqa7Wta7Wua7Wqc7Wtc7Wuc7Wqe7Wte7Wue//ve7WqhLWthLWuhLWyhLW1hP/vjP/zhP/3hP/3jP/zlP/3lP/3nP/3pf/zrf/3rf/7rf//rf/3tf/3vf/7vf//vf/7xv//xgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJDwApACwAAAAAHAATAAAGs0CAcEgsClPIpDJlbBaXSyFqOhmiqlIsAJqUTq9eLHXIZQJIaHQ1vVaToUKTfG4B0O3y+jEKGPn/Iw99foJ/gntdACCLjIuCjI+Ob0hCIpaXlwwAmZuWmohCHqKjpJqjpqKfW2Ydra6uCQCwsq2xoAAcubq5sbq9vJNmF8PEFwYAxMfJwWYazs/H0ADSiIkZ19cEANja3MyU297h2uPf4BHoAUMR6kLs5uBOTmXx8k/0KUEAACH5BAkPACkALAAAAAAcABMAAAa4QIBwCEgRj8WUcrlEOpHMqBBFnRBR1mk2GTUCqNVh+Isddr2kdDqrtrbNUoBpTrfI63eTXRgf+f8jDwCAgn+CfE0AIIuMi4KNj45wXiKVlpYMAJeZmHBCHqChopmjAKGZfEIdq6ysCQCtr66eABy2t7avuLq5k0IXwMEXBgDCxMHEiEpCGs3OxM4a0M3JXMsAGdnZBELa3N6TidoZ3N3k5uXWiRHsAUQR7kLw4UxP9spdTl5PZ0tBAAAh+QQJDwApACwAAAAAHAATAAAGwkCAcAhIEYvHlHK5PAqNziSzCUChJscrUfucQq1coRUrDnuFpDSJDFCT3cOp0ESnW+b1e9107yqFI4GCDwCCgYSGhH5CII2OIISPkACPikVQIpmamQwAmyKdm51PQh6mp6edqB6qqUcdsLGwCQCyHbSytKQAHL2+HLS/wLy+updCF8nKBgDKyczOzIsAGtXV0tYazNnSl38AGeEZBEPi5ODh597f5kTp5eNxcgAREQFH9kT5fkxRUFHyzkhJIsVLiiAAACH5BAkPACkALAAAAAAcABMAAAa8QIBwSBSmUsWjcllsGptLJgA1KVKtVWMUOb0OUV4hOAvYCkloMpqkTg+jQpPcZInP64A5/a0Ujv5/DwCAgYOEglpcIIuMgoyLjo+IZVwilpciDACYmZuYmk8AHqOko5qlHqeloEMdrq8dCQCwsbOwsqEcuruyu7q9vriUQhfFxQYAxsfJysiJQhrRGs7S09DSzpRHQhndBEPdGd/c3nx9AOXg4kTp2ucRAUXw8vGJUkRc+FBb+VpJ/e6iBAEAIfkECQ8AKQAsAAAAABwAEwAABrpAgHBIBKRSxaNyiSw6m0TmUoiaEKtFrFB6pGoBqC/4yxWSzlbAmZRWo4dSoWlusgDodTndvp0CRoCAD3+Bg4GCcEpCIIyNg40gj5CDfU0il5giDACZm5maiUIeo6Sjm6WnqHBCHa2uHQkAr7GvsKEAHLm6sbocvL2xlUIXxMQGAMUXx8nKiV0AGtEax9LTQtXHlc8Z3ARC3Bne393OigDk4+Lp5eYRAUTuRfHafk5RT1xQW0n6RvkpQQAAIfkEBQ8AKQAsAAAAABwAEwAABrxAgHBIBKSKqaRyeSw6nUym8HSSDKtErDCqnFKtgO9Va+QKSWgSBZBes9HushRQqtcr9Htev52P/oAOAIGDhH1dAB+Kix8QiYqOjI6HTSGWl5YLAJeamJqHQh6io6MNAKWnqH1CHa2urQgArrGvsaAAG7m6Gwq4ub27vZRCF8XGBQDHycqUTRrPzwcA0NLQGtLNTRjbGAMA3N7f2+FyS0IZ6OHpQ+vZSUIREQJD8kT17u9P+vj5+01DXJYEAQA7) no-repeat
+    background: url(data:image/gif;base64,R0lGODlhHAATANUpAAAAALWlUrWmUrWqWrWtWrWqY7WtY7WuY7Wqa7Wta7Wua7Wqc7Wtc7Wuc7Wqe7Wte7Wue//ve7WqhLWthLWuhLWyhLW1hP/vjP/zhP/3hP/3jP/zlP/3lP/3nP/3pf/zrf/3rf/7rf//rf/3tf/3vf/7vf//vf/7xv//xgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJDwApACwAAAAAHAATAAAGs0CAcEgsClPIpDJlbBaXSyFqOhmiqlIsAJqUTq9eLHXIZQJIaHQ1vVaToUKTfG4B0O3y+jEKGPn/Iw99foJ/gntdACCLjIuCjI+Ob0hCIpaXlwwAmZuWmohCHqKjpJqjpqKfW2Ydra6uCQCwsq2xoAAcubq5sbq9vJNmF8PEFwYAxMfJwWYazs/H0ADSiIkZ19cEANja3MyU297h2uPf4BHoAUMR6kLs5uBOTmXx8k/0KUEAACH5BAkPACkALAAAAAAcABMAAAa4QIBwCEgRj8WUcrlEOpHMqBBFnRBR1mk2GTUCqNVh+Isddr2kdDqrtrbNUoBpTrfI63eTXRgf+f8jDwCAgn+CfE0AIIuMi4KNj45wXiKVlpYMAJeZmHBCHqChopmjAKGZfEIdq6ysCQCtr66eABy2t7avuLq5k0IXwMEXBgDCxMHEiEpCGs3OxM4a0M3JXMsAGdnZBELa3N6TidoZ3N3k5uXWiRHsAUQR7kLw4UxP9spdTl5PZ0tBAAAh+QQJDwApACwAAAAAHAATAAAGwkCAcAhIEYvHlHK5PAqNziSzCUChJscrUfucQq1coRUrDnuFpDSJDFCT3cOp0ESnW+b1e9107yqFI4GCDwCCgYSGhH5CII2OIISPkACPikVQIpmamQwAmyKdm51PQh6mp6edqB6qqUcdsLGwCQCyHbSytKQAHL2+HLS/wLy+updCF8nKBgDKyczOzIsAGtXV0tYazNnSl38AGeEZBEPi5ODh597f5kTp5eNxcgAREQFH9kT5fkxRUFHyzkhJIsVLiiAAACH5BAkPACkALAAAAAAcABMAAAa8QIBwSBSmUsWjcllsGptLJgA1KVKtVWMUOb0OUV4hOAvYCkloMpqkTg+jQpPcZInP64A5/a0Ujv5/DwCAgYOEglpcIIuMgoyLjo+IZVwilpciDACYmZuYmk8AHqOko5qlHqeloEMdrq8dCQCwsbOwsqEcuruyu7q9vriUQhfFxQYAxsfJysiJQhrRGs7S09DSzpRHQhndBEPdGd/c3nx9AOXg4kTp2ucRAUXw8vGJUkRc+FBb+VpJ/e6iBAEAIfkECQ8AKQAsAAAAABwAEwAABrpAgHBIBKRSxaNyiSw6m0TmUoiaEKtFrFB6pGoBqC/4yxWSzlbAmZRWo4dSoWlusgDodTndvp0CRoCAD3+Bg4GCcEpCIIyNg40gj5CDfU0il5giDACZm5maiUIeo6Sjm6WnqHBCHa2uHQkAr7GvsKEAHLm6sbocvL2xlUIXxMQGAMUXx8nKiV0AGtEax9LTQtXHlc8Z3ARC3Bne393OigDk4+Lp5eYRAUTuRfHafk5RT1xQW0n6RvkpQQAAIfkEBQ8AKQAsAAAAABwAEwAABrxAgHBIBKSKqaRyeSw6nUym8HSSDKtErDCqnFKtgO9Va+QKSWgSBZBes9HushRQqtcr9Htev52P/oAOAIGDhH1dAB+Kix8QiYqOjI6HTSGWl5YLAJeamJqHQh6io6MNAKWnqH1CHa2urQgArrGvsaAAG7m6Gwq4ub27vZRCF8XGBQDHycqUTRrPzwcA0NLQGtLNTRjbGAMA3N7f2+FyS0IZ6OHpQ+vZSUIREQJD8kT17u9P+vj5+01DXJYEAQA7) no-repeat;
+    z-index: 20
 }
 
 .SideB .roomPlayerMobile {
@@ -2534,11 +2561,6 @@ a:active {
     box-shadow: 0 0 8px 4px #4f4
 }
 
-.bg3 {
-    background-color: #efe !important;
-    box-shadow: #04FEFE 0px 0px 8px 4px
-}
-
 .SideB .roomPlayerBalloon {
     position: absolute;
     right: 55px;
@@ -2565,7 +2587,7 @@ a:active {
     height: 19px;
     background-position: 0 -279px;
     display: none;
-    z-index: 11
+    z-index: 26
 }
 
 .HD .roomBotSelect {
@@ -2580,7 +2602,7 @@ a:active {
     height: 19px;
     background-position: 0 -299px;
     display: none;
-    z-index: 11
+    z-index: 26
 }
 
 .HD .roomBotRemove {
@@ -2706,7 +2728,7 @@ a:active {
     color: #adf7f7;
     z-index: 111;
     -webkit-transform-origin: center bottom;
-    transform-origin: center bottom;
+    transform-origin: center bottom
 }
 
 #roomInput:focus {
@@ -2719,9 +2741,7 @@ a:active {
     left: 8px;
     top: 502px;
     width: 553px;
-    height: 75px;
-    box-shadow: inset 0 0 26px #b21db5;
-    border: 1px solid rgb(189 40 189);
+    height: 75px
 }
 
 #roomChatHtml {
@@ -2807,13 +2827,13 @@ a:active {
 }
 
 .ItemBtn:hover {
-    opacity: .5;
+    filter: brightness(1.3);
     cursor: pointer
 }
 
 .ItemBtn:active {
     margin: 1px 0 0 1px;
-    opacity: .5;
+    filter: brightness(1.3);
     cursor: pointer
 }
 
@@ -3192,7 +3212,7 @@ a:active {
     left: 10px;
     top: 10px;
     width: 600px;
-    height: 550px;
+    height: 111px;
     color: #acf2f6;
     font-size: 12px
 }
@@ -3213,7 +3233,7 @@ a:active {
     padding-left: 2px;
     margin: 0;
     word-wrap: break-word;
-    width: 275px;
+    width: 364px;
     direction: ltr
 }
 
@@ -3355,7 +3375,8 @@ a:active {
     position: absolute;
     display: none;
     width: 160px;
-    -webkit-transform: translate3d(0,0,0)
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 .ColorTeamA {
@@ -4051,7 +4072,7 @@ a:active {
 #friends_list_dnd_btn {
     position: absolute;
     left: 163px;
-    top: 0;
+    top: 6px
 }
 
 .dnd_btn {
@@ -4104,7 +4125,7 @@ a:active {
 }
 
 .glow_button:hover {
-    box-shadow: 0 0 10px 10px #1cb869 !important;
+    box-shadow: 0 0 10px 10px #ff0 !important
 }
 
 .glow_button:active {
@@ -4118,7 +4139,7 @@ a:active {
 }
 
 .glow_button_anim:hover {
-    /*box-shadow: 0 0 10px 10px #ff0 !important*/
+    box-shadow: 0 0 10px 10px #ff0 !important
 }
 
 .glow_button_anim:active {
@@ -4146,6 +4167,7 @@ a:active {
     height: 600px;
     display: none;
     -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
     background-repeat: no-repeat;
     background-size: cover
 }
@@ -4377,15 +4399,19 @@ a:active {
 
 .score_mvp {
     position: absolute;
-    left: 156px;
-    top: 51px;
+    left: 170px;
+    top: 46px;
     color: #ff0;
     text-shadow: -1px 0 2px black,0 1px 2px black,1px 0 2px black,0 -1px 2px black,0 0 10px yellow,0 0 10px yellow;
-    display: none
+    display: none;
+    background: url(/static/images/mvp.png);
+    background-size: cover;
+    width: 61px;
+    height: 25px
 }
 
 .HD .score_mvp {
-    left: 34px
+    left: 43px
 }
 
 #turns_list {
@@ -4556,14 +4582,7 @@ a:active {
 
 .HD .AlertBox {
     background-position: -680px -318px;
-    background-size: 1000px 1500px;
-    background: linear-gradient(45deg, black, transparent);
-    box-shadow: inset 0 0 26px #b21db5;
-    border: 1px solid rgb(189 40 189);
-}
-
-.AlertBoxContent{
-
+    background-size: 1000px 1500px
 }
 
 .AlertBoxTitle {
@@ -4954,21 +4973,11 @@ a:active {
 
 #join_room_input {
     margin-left: 8px;
-    width: 152px;
+    width: 125px
 }
 
 #join_password_input {
-    width: 151px
-}
-
-#join_room1{
-    font-size: 12px;
-    color: #a8a8a8;
-}
-
-#join_room2{
-    font-size: 12px;
-    color: #a8a8a8;
+    width: 125px
 }
 
 .input_field {
@@ -6124,7 +6133,7 @@ a:active {
 
 #shop_item0 {
     left: 259px;
-    top: 26px;
+    top: 26px
 }
 
 #shop_item1 {
@@ -6174,10 +6183,7 @@ a:active {
 }
 
 .HD .shop_item {
-    background-position: -341.5px -346px;
-    background: radial-gradient(circle at center, #f7b46f 0, rgb(205 95 198 / 44%), #2e025a 100%);
-    box-shadow: inset 0 0 26px #b21db5;
-    border: 1px solid rgb(189 40 189);
+    background-position: -341.5px -346px
 }
 
 .shop_item:hover {
@@ -6693,7 +6699,7 @@ a:active {
     right: 16px;
     width: 150px;
     height: 12px;
-    color: #ffffff;
+    color: #8bc2ee;
     text-align: right;
     font-size: 11px;
     font-weight: bold
@@ -6812,10 +6818,7 @@ a:active {
 }
 
 .HD .shop_my_item {
-    background-position: -751px -815px;
-    background: linear-gradient(178deg, rgb(248 242 249 / 91%), white);
-    border-radius: 22px;
-    margin: 0 0 6px 0;
+    background-position: -751px -815px
 }
 
 .HD .shop_my_item.selected {
@@ -6836,8 +6839,7 @@ a:active {
 }
 
 .HD .shop_my_item_cash {
-    background-position: -915.5px -878px;
-    display: none;
+    background-position: -915.5px -878px
 }
 
 .HD .shop_my_item_cash.selected {
@@ -6942,8 +6944,8 @@ a:active {
 
 #shop_my_cash {
     position: absolute;
-    right: 68px;
-    top: 147px;
+    right: 605px;
+    top: 143px;
     width: 150px;
     height: 12px;
     color: #8bc2ee;
@@ -6954,8 +6956,8 @@ a:active {
 
 #shop_my_gold {
     position: absolute;
-    right: 55px;
-    top: 162px;
+    right: 605px;
+    top: 157px;
     width: 150px;
     height: 12px;
     color: #ffd273;
@@ -7150,7 +7152,7 @@ a:active {
 
 #add_bot_button {
     position: absolute;
-    left: 417px;
+    left: 430px;
     width: 82px;
     height: 19px;
     background-position: -83px -279px
@@ -7222,7 +7224,7 @@ a:active {
     position: absolute;
     left: 104px;
     top: 161px;
-    color: white;
+    color: black;
     font-size: 12px;
     width: 200px
 }
@@ -7296,11 +7298,11 @@ a:active {
 
 #buttonChannels {
     position: absolute;
-    left: 733px;
+    left: 725px;
     top: 542px;
     width: 55px;
     height: 51px;
-    background-position: -112px -303px
+    background-position: -112px -303px;
 }
 
 .HD #buttonChannels {
@@ -7592,7 +7594,7 @@ a:active {
 }
 
 .HD #buttonAllBuddyList3,.HD #room_item_buddy_tab3 {
-    left: 727px;
+    left: 727px
 }
 
 .buttonAllBuddyList3 {
@@ -8118,7 +8120,7 @@ a:active {
     width: 375px;
     height: 383px;
     background-position: 0 -972px;
-    z-index: 11
+    z-index: 1000
 }
 
 .HD #dialog_room_options {
@@ -8459,14 +8461,15 @@ a:active {
     position: absolute;
     left: 588px;
     top: 116px;
-    width: 48px;
-    height: 48px;
+    width: 35px;
+    height: 35px;
+    background-size: 100% 100%;
     z-index: 10;
     overflow: hidden
 }
 
 #myPhotoDiv.glow_button_anim {
-    height: 48px;
+    height: 35px;
     cursor: pointer
 }
 
@@ -8740,24 +8743,20 @@ a:active {
 
 #BrokerWindow {
     position: absolute;
-    /*left: 82px;*/
-    left: 0px;
+    left: 82px;
     top: 104px;
-    /*width: 636px;*/
-    width: 795px;
+    width: 690px;
     height: 388px;
-    /*border: black solid 2px;
-    border-radius: 20px;*/
+    border: black solid 2px;
+    border-radius: 20px;
     color: white;
     z-index: 999;
-    /*background: rgba(20,20,140,0.6);
-    background-size: cover;
-    box-shadow: 5px 10px 30px 10px #000,inset 1px 2px 4px #7394b5*/
-    background-image: url("../images/server_bg2.png?3");
-    background-size: cover
+    background: rgba(20,20,140,0.6);
+    background-size: 100% 100%;
+    box-shadow: 5px 10px 30px 10px #000,inset 1px 2px 4px #7394b5
 }
 
-/*#BrokerPlayer {
+#BrokerPlayer {
     position: absolute;
     left: 200px;
     top: 80px;
@@ -8773,21 +8772,6 @@ a:active {
     text-align: center;
     padding-top: 3px;
     font-size: 12px
-}*/
-
-#BrokerPlayer {
-    position: absolute;
-    left: 70px;
-    top: 80px;
-    width: 318.6px;
-    height: 22px;
-    color: white;
-    z-index: 999;
-    background-size: cover;
-    box-shadow: 5px 5px 30px 10px #10d1faa8, inset 1px 2px 4px #7394b5;
-    text-align: center;
-    padding-top: 3px;
-    font-size: 12px;
 }
 
 .UsernameAboveDialog {
@@ -8824,50 +8808,6 @@ a:active {
     color: white
 }
 
-.BrokerSlider {
-    width: 329px;
-    height: 552px;
-    left: 461px;
-    top: 41px;
-    overflow: hidden;
-    position: relative
-}
-
-.BrokerSlider img {
-    width: 100%;
-    height: 100%
-}
-
-.BrokerSliderImage {
-    position: absolute;
-    -webkit-animation: ChannelSliderImg 75s infinite;
-    -moz-animation: ChannelSliderImg 75s infinite;
-    -o-animation: ChannelSliderImg 75s infinite;
-    animation: ChannelSliderImg 75s infinite;
-    opacity: 0;
-    width: 100%
-}
-
-.BrokerSlider img:nth-child(5) {
-    -webkit-animation-delay: 0s
-}
-
-.BrokerSlider img:nth-child(4) {
-    -webkit-animation-delay: 15s
-}
-
-.BrokerSlider img:nth-child(3) {
-    -webkit-animation-delay: 30s
-}
-
-.BrokerSlider img:nth-child(2) {
-    -webkit-animation-delay: 45s
-}
-
-.BrokerSlider img:nth-child(1) {
-    -webkit-animation-delay: 60s
-}
-
 .BrokerChannel {
     position: absolute;
     width: 190px;
@@ -8876,53 +8816,53 @@ a:active {
 }
 
 #BrokerChannel0 {
-    left: 30px;
-    top: 90px
+    left: 16px;
+    top: 40px
 }
 
 #BrokerChannel1 {
-    left: 238px;
-    top: 90px
+    left: 223px;
+    top: 40px
 }
 
 #BrokerChannel2 {
-    left: 30px;
-    top: 177px
+    left: 430px;
+    top: 40px
 }
 
 #BrokerChannel3 {
-    left: 238px;
-    top: 177px
+    left: 16px;
+    top: 127px
 }
 
 #BrokerChannel4 {
-    left: 30px;
-    top: 264px
+    left: 223px;
+    top: 127px
 }
 
 #BrokerChannel5 {
-    left: 238px;
-    top: 264px
+    left: 430px;
+    top: 127px
 }
 
 #BrokerChannel6 {
-    left: 30px;
-    top: 351px
+    left: 16px;
+    top: 214px
 }
 
 #BrokerChannel7 {
-    left: 238px;
-    top: 351px
+    left: 223px;
+    top: 214px
 }
 
 #BrokerChannel8 {
-    left: 30px;
-    top: 438px
+    left: 430px;
+    top: 214px
 }
 
 #BrokerChannel9 {
-    left: 238px;
-    top: 438px
+    left: 16px;
+    top: 301px
 }
 
 #BrokerChannel10 {
@@ -9145,9 +9085,9 @@ a:active {
 #channelName {
     position: absolute;
     left: 18px;
-    top: 425px;
+    top: 430px;
     color: white;
-    font-size: 12px;
+    font-size: 15px;
     padding: 5px
 }
 
@@ -9547,22 +9487,37 @@ a:active {
 
 .refresh_button_friends {
     border: 1px solid #25729a;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     border-radius: 3px;
     font-family: arial,helvetica,sans-serif;
-    padding: 6px;
+    padding: 10px 10px 10px 10px;
     text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
     font-weight: bold;
     text-align: center;
     color: #fff;
-    /*background-color: #3093c7;*/
-    /*filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#3093c7,endColorstr=#1c5a85);*/
-    font-size: 12px;
-    width: 138px;
+    background-color: #3093c7;
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#3093c7),color-stop(100%,#1c5a85));
+    background-image: -webkit-linear-gradient(top,#3093c7,#1c5a85);
+    background-image: -moz-linear-gradient(top,#3093c7,#1c5a85);
+    background-image: -ms-linear-gradient(top,#3093c7,#1c5a85);
+    background-image: -o-linear-gradient(top,#3093c7,#1c5a85);
+    background-image: linear-gradient(top,#3093c7,#1c5a85);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#3093c7,endColorstr=#1c5a85);
+    font-size: 15px;
+    width: 138px
 }
 
 .refresh_button_friends:hover {
     border: 1px solid #1c5675;
-    background-color: black;
+    background-color: #26759e;
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#26759e),color-stop(100%,#133d5b));
+    background-image: -webkit-linear-gradient(top,#26759e,#133d5b);
+    background-image: -moz-linear-gradient(top,#26759e,#133d5b);
+    background-image: -ms-linear-gradient(top,#26759e,#133d5b);
+    background-image: -o-linear-gradient(top,#26759e,#133d5b);
+    background-image: linear-gradient(top,#26759e,#133d5b);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#26759e,endColorstr=#133d5b)
 }
 
 .refresh_button_friends:active {
@@ -9851,43 +9806,6 @@ a:active {
     100% {
         opacity: 0;
         -webkit-transform: translate(0,0) scale(1) rotate(0)
-    }
-}
-
-@-webkit-keyframes ChannelSliderImg {
-    25% {
-        opacity: 1;
-    }
-    
-    40% {
-        opacity: 0;
-    }
-}
-@-moz-keyframes ChannelSliderImg {
-    25% {
-        opacity: 1;
-    }
-    
-    40% {
-        opacity: 0;
-    }
-}
-@-o-keyframes ChannelSliderImg {
-    25% {
-        opacity: 1;
-    }
-    
-    40% {
-        opacity: 0;
-    }
-}
-@keyframes ChannelSliderImg {
-    25% {
-        opacity: 1;
-    }
-    
-    40% {
-        opacity: 0;
     }
 }
 
@@ -10698,10 +10616,6 @@ a:active {
     background-position: 0 -568px !important
 }
 
-.BettingServer {
-    background-position: 0 -639px !important
-}
-
 .emo {
     width: 10px;
     height: 10px;
@@ -10711,10 +10625,10 @@ a:active {
 #roomMobileSelect {
     position: absolute;
     left: 25px;
-    top: 45px;
+    top: 55px;
     width: 515px;
-    height: 510px;
-    background: rgb(0 0 0 / 92%);
+    height: 515px;
+    background: rgba(0,30,50,0.75);
     z-index: 99;
     display: none;
     border-radius: 15px
@@ -10763,9 +10677,7 @@ a:active {
     width: 131px;
     border: 1px solid black;
     padding: 2px;
-    height: 13px;
-    padding: 8px;
-    border-radius: 10px;
+    height: 13px
 }
 
 #shopSearchBtn {
@@ -11641,7 +11553,7 @@ a:active {
 #LoginPart {
     position: absolute;
     left: 30px;
-    top: 168px
+    top: 108px
 }
 
 .inputField {
@@ -11688,9 +11600,10 @@ a:active {
     text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
     background-color: #019ad2;
     background-repeat: repeat-x;
-    background-image: linear-gradient(#3a4bbf,#3c0763);
+    background-image: -webkit-linear-gradient(#33bcef,#019ad2);
+    background-image: linear-gradient(#33bcef,#019ad2);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bcef',endColorstr='#019ad2',GradientType=0);
-    border-color: #7c2bc9;
+    border-color: #057ed0;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
     color: white !important
@@ -13685,10 +13598,7 @@ body .ui-tooltip {
     left: 17px;
     bottom: 4px;
     width: 85px;
-    background: rgb(255 255 255 / 34%);
-    border: none;
-    border-radius: 50px;
-    font-size: 14px;
+    background: #ddf
 }
 
 .fbfan {
@@ -13822,11 +13732,7 @@ body .ui-tooltip {
     min-height: 14px;
     overflow: hidden;
     margin-top: -2px;
-    line-height: 12px;
-    display: flex;
-    align-items: center;
-    font-size: 10px;
-    padding: 4px;
+    line-height: 12px
 }
 
 .zotata-chat-line audio {
@@ -13968,7 +13874,7 @@ body .ui-tooltip {
 }
 
 @keyframes AnimEnterFadeOut {
-    0 {
+    0% {
         opacity: 1
     }
 
@@ -13978,7 +13884,7 @@ body .ui-tooltip {
 }
 
 @-webkit-keyframes AnimEnterFadeOut {
-    0 {
+    0% {
         opacity: 1
     }
 
@@ -13988,7 +13894,8 @@ body .ui-tooltip {
 }
 
 .ForceHW {
-    -webkit-transform: translateZ(0)
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 #notificationBtn {
@@ -14020,8 +13927,7 @@ body .ui-tooltip {
 }
 
 #show_more_friends_button {
-    width: 100%;
-    margin: 1em 0 0 0;
+    width: 100%
 }
 
 #next_avatar_particles {
@@ -14285,22 +14191,32 @@ body .ui-tooltip {
 }
 
 @-webkit-keyframes move_stripes {
-    0 {
-        background-position: 0 0
+    0% {
+        background-position: 0 0;
     }
 
     100% {
-        background-position: 50px 50px
+        background-position: 50px 50px;
     }
 }
 
 @-moz-keyframes move_stripes {
-    0 {
-        background-position: 0 0
+    0% {
+        background-position: 0 0;
     }
 
     100% {
-        background-position: 50px 50px
+        background-position: 50px 50px;
+    }
+}
+
+@keyframes move_stripes {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50px 50px;
     }
 }
 
@@ -14321,6 +14237,7 @@ body .ui-tooltip {
 .nostripes>span>span,.nostripes>span:after {
     -webkit-animation: none;
     -moz-animation: none;
+    animation: none;
     background-image: none
 }
 
@@ -15214,6 +15131,11 @@ img.emoji {
     text-align: left
 }
 
+#ReplayPanel2 {
+    direction: ltr;
+    text-align: left
+}
+
 #ReplayRestartBtn {
     font-size: 30px;
     height: 50px
@@ -15309,41 +15231,4 @@ img.emoji {
     top: 0;
     padding: 6px 10px;
     color: white
-}
-
-
-.chat-history .zotata-chat-line{
-    display: flex;
-    align-items: center;
-    margin: 0 0 1em 0;
-    padding: 2px 7px;
-    border-radius: 24px;
-    background: linear-gradient(45deg, #efefef, transparent);
-    border: 1px solid #3a3a3a;
-}
-
-#channelTextHtml .zotata-chat-line{
-    display: flex;
-    align-items: center;
-    margin: 0.2em 0;
-    font-size: 10px;
-}
-
-#channelName{
-    display: flex;
-    align-items: center;
-}
-
-.iHaveAvatar{
-    filter: contrast(0.5);
-}
-
-#shop_player_container_shop{
-    box-shadow: inset 0 0 26px #b21db5;
-    border: 1px solid rgb(189 40 189);
-    width: 209px;
-    height: 189px;
-    position: absolute;
-    margin: 0.5em;
-    background: linear-gradient(179deg, #00000080, #000000d1);
 }
