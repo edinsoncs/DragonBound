@@ -145,7 +145,7 @@ module.exports = class GameServer {
         data.push([
           "Hola " +
             account.player.game_id +
-            " enteraté de nuestro nuevo (gift) Evento (gift) en => https://thorbound.com/event :)",
+            " enteraté de nuestro nuevo (gift) Evento (gift) en => https://t.me/lassiegame :)",
           "",
           17,
         ]);
