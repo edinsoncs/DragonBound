@@ -4,7 +4,11 @@ module.exports = class {
 	#list
 	#count
 	#mapw
-	constructor(map) {
+	constructor(map = {}) {
+		if (typeof map.w !== 'number') {
+			console.warn('[WARN]: WeatherControl initialized with invalid or missing map.w. Defaulting to 800.');
+			map.w = 800; 
+		}
 		this.#list	= [];
 		this.#count	= 0;
 		this.#mapw  = map.w
