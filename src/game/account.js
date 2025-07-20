@@ -5122,7 +5122,7 @@ module.exports = class Account {
           "Hola " + this.player.game_id,
           "Tu Nivel <span class='span_rank rank rank" +
             self.player.rank +
-            "'></span> Es Muy Bajo. <br>Nivel mínimo <span class='span_rank rank rank5'></span> es requerido para hablar en este chat. <br><br><a style='color:#fbf9f9;text-shadow: 0px 0px 2px #ff980099, 0px 0px 3px #ff830057, 0px 0px 7px #ff98005e, 0px 0px 5px #ff9b0066, 0px 0px 8px #ff980059, 0px 0px 8px #ff8f0070;'>Unete a nuestras redes sociales!!</a>. <br><br> <a href='https://www.facebook.com/groups/250371652898757' target='_blank'> <img width='40' height='40' target='_blank' src='/static/images/fbx.png'></a>&nbsp&nbsp<a href='https://chat.whatsapp.com/DMeNbEsnTbfDQWtwvDsq5d' target='_blank'> <img width='40' height='40' target='_blank' src='/static/images/wspp.png'></a><br>"
+            "'></span> Es Muy Bajo. <br>Nivel mínimo <span class='span_rank rank rank5'></span> es requerido para hablar en este chat. <br><br><a style='color:#fbf9f9;text-shadow: 0px 0px 2px #ff980099, 0px 0px 3px #ff830057, 0px 0px 7px #ff98005e, 0px 0px 5px #ff9b0066, 0px 0px 8px #ff980059, 0px 0px 8px #ff8f0070;'>Unete a nuestras redes sociales!!</a>. <br><br>"
         )
       );
       return null;
