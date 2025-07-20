@@ -1906,6 +1906,12 @@ a:active {
 
 #CreateRoomPrivateCheckbox {
     background: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #acf2f6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+    padding-left: 4px;
 }
 
 #CreateRoomPlayers {
@@ -2003,7 +2009,8 @@ a:active {
 }
 
 .HD #CreateRoomPassword {
-    background-position: -342.5px -327.5px
+    background-position: -342.5px -327.5px;
+    left: 3.5em;
 }
 
 #createRoomPasswordInput {
@@ -15277,7 +15284,7 @@ img.emoji {
   
   .s_Header h2 {
     margin: 0;
-    font-size: 22px;
+    font-size: 17px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #ffffff;
@@ -15291,6 +15298,7 @@ img.emoji {
     margin: 11px 0;
     justify-content: space-between;
     align-items: center;
+    padding: 0 5px;
   }
   .s_Txt{
     font-size: 14px;
@@ -15299,4 +15307,14 @@ img.emoji {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     letter-spacing: 0.5px;
     padding-left: 4px;
+  }
+
+  .s_Pass{
+    padding: 6px;
+  }
+
+  .s_Room--Iz{
+    font-size: 12px;
+    padding: 5px;
+    text-shadow: 0 0px 2px black;
   }
