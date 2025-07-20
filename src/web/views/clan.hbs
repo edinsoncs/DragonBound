@@ -67,11 +67,8 @@
                         <script>
                             Img2Div2($('.profile-image'), '{{ img }}')
                         </script>
-                        <div class="profile-image w-32 h-32 bg-gray-600 flex items-center justify-center text-4xl text-blue-300">
-                            <!-- Use this if substring and upper helpers are registered: -->
-                            {{ guild | substring 0 1 | upper }}
-                            <!-- Fallback if helpers aren't registered (requires JS preprocessing or custom helper): -->
-                            <!-- {{ guild.[0] | upper }} -->
+                        <div class="profile-image w-32 h-32 bg-gray-600 flex items-center justify-center text-2xl sm:text-4xl text-blue-300">
+                            {{ guild }} <!-- Fallback to full guild name -->
                         </div>
                     </div>
                     <div class="text-center py-6">
