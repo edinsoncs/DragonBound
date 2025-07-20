@@ -1916,7 +1916,8 @@ a:active {
     font-weight: 900;
     text-align: center;
     width: 100px;
-    color: #ff6
+    color: #ff6;
+    background: none;
 }
 
 #CreateRoomMode {
