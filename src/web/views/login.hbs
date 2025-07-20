@@ -1,162 +1,108 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ThorBound Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lassie Login</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="/static/js/jquery-2.1.4.min.js"></script>
     <script src="/static/js/QTransform.js"></script>
-    <link rel="stylesheet" href="/static/DragonBook/DragonBook.min.css?15" />
     <script src="/static/DragonBook/DragonBook.min.js?14"></script>
-
-
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lassie Login" />
+    <meta property="og:description" content="Log in to Lassie to join your clan and dominate the battlefield!" />
+    <meta property="og:image" content="/static/images/lassie-logo.png" />
+    <meta property="og:url" content="https://ThorBound.tk/login" />
+    <meta property="fb:app_id" content="" />
+    <script async src=""></script>
+    <script>
+        $(function () {
+            // Parallax effect for background
+            $(window).scroll(function () {
+                const scroll = $(window).scrollTop();
+                $('.parallax-bg').css('background-position', `center ${scroll * 0.5}px`);
+            });
+            $('#username').focus();
+        });
+        // HTTPS redirect
+        if (location.protocol === 'http:' && location.host === 'ClassicBound.net') {
+            location.replace(location.href.replace('http:', 'https:'));
+        }
+    </script>
     <style>
         body {
-            background: #3364a6 url('/static/images/aqua_bg.jpg') no-repeat center center fixed;
+            background: #1a1a1a url('/static/images/aqua_bg.jpg') no-repeat center top fixed;
             background-size: cover;
+        }
+        .parallax-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/static/images/aqua_bg.jpg');
+            background-attachment: fixed;
+            background-position: center top;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
     </style>
 </head>
-
-<body>
+<body class="bg-black text-white min-h-screen flex flex-col font-sans antialiased relative overflow-x-hidden">
+    <div class="parallax-bg"></div>
     <div id="fb-root"></div>
-    <div id="titleTable">
-        <div id="titleTableLeft" class="cell">
-            <span id="icon"></span> <span id="titleText"><a href="/">ThorBound</a> > <a href="/login">Login</a></span>
+    <!-- Header -->
+    <header class="bg-gray-900/90 backdrop-blur-sm shadow-lg sticky top-0 z-40 border-b border-red-900">
+        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-4 sm:mb-0">
+                <img src="/static/images/lassie-logo.png" alt="Lassie Logo" class="w-12 h-12">
+                <nav class="text-sm font-semibold uppercase tracking-wide" role="navigation">
+                    <a href="/" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Lassie</a> >
+                    <a href="/login" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Login</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4 text-sm font-semibold">
+                <a href="/register" class="text-yellow-400 hover:text-yellow-300 transition-colors duration-200">Register</a>
+            </div>
         </div>
-        <div id="titleTableRight" class="cell right">
-            <a href="/login?next=">Login</a>
-        </div>
-    </div>
-    <div id="body">
-        <style>
-            .loginBox {
-                width: 290px;
-                margin: auto;
-            }
-            
-            .inputField {
-                font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
-                font-size: 18px;
-                padding: 8px 10px;
-                border-color: #bdc7d8;
-                border-radius: 5px;
-                margin: 5px;
-            }
-            
-            #username {
-                width: 250px;
-            }
-            
-            #pass {
-                width: 175px;
-            }
-            
-            .blueBtn {
-                display: inline-block;
-                padding: 5px 10px;
-                font-size: 13px;
-                font-weight: bold;
-                line-height: 18px;
-                color: #333;
-                text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
-                background-color: #ccc;
-                background-repeat: no-repeat;
-                border: 1px solid #ccc;
-                cursor: pointer;
-                border-radius: 4px;
-                -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-                font-family: Arial, sans-serif;
-                color: #fff;
-                text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
-                background-color: #019ad2;
-                background-repeat: repeat-x;
-                background-image: -webkit-linear-gradient(#33bcef, #019ad2);
-                background-image: linear-gradient(#33bcef, #019ad2);
-                filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#33bcef', endColorstr='#019ad2', GradientType=0);
-                border-color: #057ed0;
-                -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-                height: 30px;
-            }
-            
-            .blueBtn:hover {
-                background-color: #0271bf;
-                background-repeat: repeat-x;
-                background-image: -webkit-linear-gradient(#2daddc, #0271bf);
-                background-image: linear-gradient(#2daddc, #0271bf);
-                filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#2daddc', endColorstr='#0271bf', GradientType=0);
-                border-color: #096eb3;
-            }
-            
-            .yellowBtn {
-                display: inline-block;
-                padding: 5px 10px;
-                font-size: 13px;
-                font-weight: bold;
-                line-height: 18px;
-                text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
-                cursor: pointer;
-                border-radius: 4px;
-                background-color: #fd9a0f;
-                background-repeat: repeat-x;
-                background-image: -webkit-linear-gradient(top, #fee94f, #fd9a0f);
-                background-image: linear-gradient(top, #fee94f, #fd9a0f);
-                filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fee94f', endColorstr='#fd9a0f', GradientType=0);
-                border-color: #fa2;
-                font-family: Arial, sans-serif;
-                text-decoration: none;
-                color: #333;
-            }
-            
-            .yellowBtn:hover {
-                background-color: #fd9512;
-                background-repeat: repeat-x;
-                background-image: -webkit-linear-gradient(top, #fedc4d, #d80);
-                background-image: linear-gradient(top, #fedc4d, #d80);
-                filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fedc4d', endColorstr='#d80', GradientType=0);
-                border-color: #ec8b11;
-            }
-            
-            .remember {
-                font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
-                font-size: 11px;
-                color: #98a9ca;
-                margin-left: 2px;
-            }
-            
-            .resetPass a {
-                font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
-                font-size: 11px;
-                color: #0cf;
-            }
-        </style>
-        <script>
-            if (location.protocol == 'http:' && location.host == 'ClassicBound.net')
-                location.replace(location.href.replace('http:', 'https:'))
-
-        </script>
-        <form method="POST">
-            <input type='hidden' name='csrfmiddlewaretoken' value='0' />
-            <div class="box loginBox">
-                <div class="boxtitle">Login</div>
-                <div style="color:red"></div>
-                <input class="inputField" id="username" name="username" placeholder="Email / UserID / Username" maxlength="100"><br>
-                <input class="inputField" type="password" id="pass" name="pass" placeholder="Password" maxlength="100"> <input
-                    type="submit" value="Login" id="submit" class="blueBtn">
-                <label class="remember"> <span class="resetPass"><a href="/accounts/password/reset">Reset password?</a></span>
-                <br>
-                <br>
-                </div>
-        </form>
-        <div class="center">
-                    <br>- or -<br><br>
-                    <a href="/" class="yellowBtn">Register / Create New Account</a>
-                    <br><br>- or -<br><br>
-                    <a href="/"><img src="/static/images/connect_with_fb.png"></a>
+    </header>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 flex-grow flex items-center justify-center relative z-10">
+        <div class="w-full max-w-md">
+            <div class="bg-gray-800/90 rounded-xl shadow-2xl border border-gray-700 p-6 sm:p-8 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-24 h-24 bg-red-900/50 -translate-y-1/2 rounded-br-full"></div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-blue-400 mb-6 text-center">Lassie Clan Login</h2>
+                <form method="POST" class="space-y-4">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="0" />
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-300 mb-1">Email / UserID / Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your credentials" maxlength="100" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" />
                     </div>
-                    <script>document.getElementById("username").focus()</script>
+                    <div class="flex items-center">
+                        <input type="password" id="pass" name="pass" placeholder="Password" maxlength="100" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200" />
+                        <button type="submit" class="ml-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 transition-colors duration-200">Login</button>
+                    </div>
+                    <div class="text-sm text-gray-400">
+                        <a href="/accounts/password/reset" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Forgot Password?</a>
+                    </div>
+                </form>
+                <div class="text-center mt-6 space-y-4">
+                    <p class="text-sm text-gray-400">- or -</p>
+                    <a href="/register" class="block w-full bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-400 transition-colors duration-200 text-center">Create New Account</a>
+                    <a href="/" class="block w-full bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition-colors duration-200 flex items-center justify-center">
+                        <img src="/static/images/connect_with_fb.png" alt="Connect with Facebook" class="w-6 h-6 mr-2">
+                        Connect with Facebook
+                    </a>
+                </div>
+            </div>
         </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-gray-900/90 backdrop-blur-sm py-4 border-t border-gray-700">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
+            © 2025 Lassie. All rights reserved. | <a href="/terms" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Terms</a> | <a href="/privacy" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Privacy</a> | Last Updated: 02:53 PM CEST, Jul 20, 2025
+        </div>
+    </footer>
 </body>
 </html>
