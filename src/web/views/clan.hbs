@@ -3,41 +3,77 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ guild }} - Lassie Guild</title>
+    <title>{{ guild }} - Lassie Clan</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/static/js/jquery-2.1.4.min.js"></script>
     <script src="/static/js/QTransform.js"></script>
     <script src="/static/DragonBook/DragonBook.min.js?14"></script>
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ guild }} - Lassie Guild" />
-    <meta property="og:description" content="This is the guild page for {{ guild }} in Lassie. Join the clan and dominate the battlefield!" />
+    <meta property="og:title" content="{{ guild }} - Lassie Clan" />
+    <meta property="og:description" content="Join the {{ guild }} clan in Lassie and conquer the battlefield! View stats, roster, and more." />
     <meta property="og:image" content="{{ img }}" />
     <meta property="og:url" content="https://ThorBound.tk/guild/{{ guild }}" />
     <meta property="fb:app_id" content="" />
     <script async src=""></script>
     <script>
         $(function () {
-            $('#profileName').html(ReplaceNonPrintableUnicodeChars($('#profileName').html(), 'ࡠ'))
-        })
+            $('#profileName').html(ReplaceNonPrintableUnicodeChars($('#profileName').html(), 'ࡠ'));
+            // Parallax effect for background
+            $(window).scroll(function () {
+                const scroll = $(window).scrollTop();
+                $('.parallax-bg').css('background-position', `center ${scroll * 0.5}px`);
+            });
+        });
     </script>
     {{#if fondo}}
     <style>
         body {
-            background: #3364a6 url({{ fondo }}) no-repeat center center fixed;
+            background: #1a1a1a url({{ fondo }}) no-repeat center top fixed;
             background-size: cover;
+        }
+        .parallax-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{ fondo }});
+            background-attachment: fixed;
+            background-position: center top;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+    {{else}}
+    <style>
+        body {
+            background: #1a1a1a;
+        }
+        .parallax-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/static/images/default-battlefield.jpg');
+            background-attachment: fixed;
+            background-position: center top;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
     </style>
     {{/if}}
 </head>
-<body class="bg-black text-white min-h-screen flex flex-col font-sans antialiased">
+<body class="bg-black text-white min-h-screen flex flex-col font-sans antialiased relative overflow-x-hidden">
+    <div class="parallax-bg"></div>
     <div id="fb-root"></div>
     <!-- Header -->
-    <header class="bg-gray-900 shadow-lg sticky top-0 z-30 border-b border-red-800">
+    <header class="bg-gray-900/90 backdrop-blur-sm shadow-lg sticky top-0 z-40 border-b border-red-900">
         <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center">
             <div class="flex items-center space-x-4 mb-4 sm:mb-0">
-                <img src="/static/images/lassie-logo.png" alt="Lassie Logo" class="w-10 h-10">
-                <nav class="text-sm font-semibold" role="navigation">
+                <img src="/static/images/lassie-logo.png" alt="Lassie Logo" class="w-12 h-12">
+                <nav class="text-sm font-semibold uppercase tracking-wide" role="navigation">
                     <a href="/" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Lassie</a> >
                     <a href="/guild" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Clans</a> >
                     <a href="/guild/{{ guild }}" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">{{ guild }}</a>
@@ -57,129 +93,111 @@
         </div>
     </header>
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-6 flex-grow">
-        <div class="flex flex-col lg:flex-row gap-6">
-            <!-- Left Bar -->
-            <div class="w-full lg:w-1/3 space-y-6">
-                <!-- Clan Banner -->
-                <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700 relative">
-                    <div class="w-full h-48 sm:h-64 bg-gray-700 rounded-t-xl flex items-center justify-center relative">
-                        <script>
-                            Img2Div2($('.clan-banner'), '{{ img }}')
-                        </script>
-                        <div class="clan-banner w-32 h-32 bg-gray-600 flex items-center justify-center text-3xl sm:text-5xl text-blue-400 font-bold">
-                            {{ guild }}
-                        </div>
-                        <div class="absolute top-2 right-2 bg-red-800 text-xs px-2 py-1 rounded-full">Clan Level: {{ GuildId }}</div>
+    <main class="container mx-auto px-4 py-8 flex-grow relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Clan Hero Section -->
+            <div class="lg:col-span-3 bg-gray-800/90 rounded-xl shadow-2xl border border-gray-700 p-6 relative overflow-hidden">
+                <div class="w-full h-64 sm:h-80 bg-gray-700 rounded-lg flex items-center justify-center relative">
+                    <script>
+                        Img2Div2($('.clan-banner'), '{{ img }}')
+                    </script>
+                    <div class="clan-banner w-40 h-40 sm:w-48 sm:h-48 bg-gray-600 flex items-center justify-center text-4xl sm:text-6xl font-extrabold text-blue-400 shadow-inner">
+                        {{ guild }}
                     </div>
-                    <div class="text-center py-6 bg-gray-900">
-                        <h1 id="profileName" class="text-2xl sm:text-3xl font-extrabold text-blue-400 tracking-wide">
-                            <a href="/guild/{{ guild }}" class="hover:text-blue-300 transition-colors duration-200">{{ guild }}</a>
-                        </a>
-                        <p class="text-sm text-gray-400">Led by <a href="/user/{{ guild_lider }}" class="text-blue-400 hover:text-blue-300">{{ guild_lider }}</a></p>
+                    <div class="absolute top-4 right-4 bg-red-900 text-white text-xs px-3 py-1 rounded-full font-semibold">Level {{ GuildId }}</div>
+                    <div class="absolute bottom-4 left-4 text-xl sm:text-2xl font-semibold text-yellow-400">Led by: <a href="/user/{{ guild_lider }}" class="text-blue-400 hover:text-blue-300">{{ guild_lider }}</a></div>
+                </div>
+                <div class="text-center mt-6">
+                    <h1 id="profileName" class="text-3xl sm:text-4xl font-extrabold text-blue-400 tracking-wide uppercase">
+                        <a href="/guild/{{ guild }}" class="hover:text-blue-300 transition-colors duration-200">{{ guild }} Clan</a>
                     </h1>
+                    <p class="text-sm text-gray-400 mt-2">Founded: Ener. 26, 2018</p>
                 </div>
-                <!-- Clan Stats -->
-                <div class="bg-gray-800 rounded-xl shadow-xl border border-gray-700">
-                    <div class="bg-gray-700 text-lg font-semibold p-4 rounded-t-xl text-red-400">Clan Stats</div>
-                    <div class="p-4">
-                        <table class="w-full text-sm sm:text-base">
-                            <tr class="border-b border-gray-700 hover:bg-gray-700">
-                                <td class="py-2 font-medium">Founded</td>
-                                <td class="py-2">Ener. 26, 2018</td>
-                            </tr>
-                            <tr class="border-b border-gray-700 hover:bg-gray-700">
-                                <td class="py-2 font-medium">Website</td>
-                                <td class="py-2 break-words"><a href="{{ website }}" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">{{ website }}</a></td>
-                            </tr>
-                            <tr class="border-b border-gray-700 hover:bg-gray-700">
-                                <td class="py-2 font-medium">Tournament Points</td>
-                                <td class="py-2 text-yellow-400">{{{ points }}}</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 font-medium">Clan Coins</td>
-                                <td class="py-2">
-                                    <a href="/guild/{{ guild }}/shop" class="text-blue-400 hover:text-blue-300 flex items-center transition-colors duration-200">
-                                        <span class="text-yellow-400">{{{ guild_coins }}}</span>
-                                        <button class="ml-2 bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-500 transition-colors duration-200">Shop</button>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <!-- Clan Lore -->
-                <div class="bg-gray-800 rounded-xl shadow-xl border border-gray-700">
-                    <div class="bg-gray-700 text-lg font-semibold p-4 rounded-t-xl text-red-400">Clan Lore</div>
-                    <div class="p-4 break-words text-gray-300">{{{ about }}}</div>
-                </div>
-                <!-- Clan Roster -->
-                <div class="bg-gray-800 rounded-xl shadow-xl border border-gray-700">
-                    <div class="bg-gray-700 text-lg font-semibold p-4 rounded-t-xl text-red-400">Clan Roster</div>
-                    <div class="p-0">
-                        <table class="w-full text-sm sm:text-base">
-                            <thead>
-                                <tr class="bg-gray-700">
-                                    <th class="py-2 text-center text-red-400">Rank</th>
-                                    <th class="py-2 text-center text-red-400">Name</th>
-                                    <th class="py-2 text-center text-red-400">S</th>
-                                    <th class="py-2 text-center text-red-400">GP</th>
-                                    <th class="py-2 text-center text-red-400">L</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{{ guild_menbers }}}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- Clan Settings (Leader Only) -->
-                {{#if edit_state}}
-                <div class="bg-gray-800 rounded-xl shadow-xl border border-gray-700">
-                    <div class="bg-gray-700 text-lg font-semibold p-4 rounded-t-xl text-red-400">Clan Command Center (Leader Only)</div>
-                    <div class="p-4">
-                        <form method="post" class="space-y-4">
-                            <input type="hidden" name="csrfmiddlewaretoken" value="sQTr7DAK4WgJStF9jydizISlCGKK6jvnTx3V3KuBP5qEpp2ujgP0PRsSgJRY47vP" />
-                            <div>
-                                <label for="id_website_url" class="block text-sm font-medium mb-1 text-gray-300">Clan Website</label>
-                                <input type="url" name="website_url" value="{{ website }}" id="id_website_url" maxlength="255" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-describedby="website-help" />
-                                <span id="website-help" class="text-xs text-gray-400">Optional Clan Hub</span>
-                            </div>
-                            <div>
-                                <label for="id_photo_url" class="block text-sm font-medium mb-1 text-gray-300">Clan Banner URL</label>
-                                <input type="url" name="photo_url" value="{{ img }}" id="id_photo_url" maxlength="255" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-describedby="photo-help" />
-                                <span id="photo-help" class="text-xs text-gray-400">160x160, Upload to http://prntscr.com</span>
-                            </div>
-                            <div>
-                                <label for="id_page_bg_url" class="block text-sm font-medium mb-1 text-gray-300">Background Image URL</label>
-                                <input type="url" name="page_bg_url" value="{{ fondo }}" id="id_page_bg_url" maxlength="255" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-describedby="bg-help" />
-                                <span id="bg-help" class="text-xs text-gray-400">Upload to prntscr.com © image url</span>
-                            </div>
-                            <div>
-                                <label for="id_description" class="block text-sm font-medium mb-1 text-gray-300">Clan Lore</label>
-                                <textarea name="description" id="id_description" rows="6" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">{{ about }}</textarea>
-                            </div>
-                            <input type="submit" name="EDIT_SETTINGS" value="Update Clan" class="w-full bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-500 transition-colors duration-200" />
-                        </form>
-                    </div>
-                </div>
-                {{/if}}
             </div>
-            <!-- Right Bar -->
-            <div class="w-full lg:w-2/3">
-                <div class="bg-gray-800 rounded-xl shadow-xl border border-gray-700">
-                    <div class="bg-gray-700 text-lg font-semibold p-4 rounded-t-xl text-red-400">Clan Chat</div>
-                    <div class="p-4">
-                        <div class="fb-comments" data-href="https://ThorBound.tk/guild/{{ guild }}" data-width="100%" data-num-posts="20" data-colorscheme="dark"></div>
+            <!-- Clan Stats -->
+            <div class="bg-gray-800/90 rounded-xl shadow-2xl border border-gray-700 p-6">
+                <h2 class="text-lg font-semibold text-red-400 mb-4">Clan Battle Stats</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">Tournament Points</span>
+                        <span class="text-yellow-400 text-lg font-bold">{{{ points }}}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">Clan Coins</span>
+                        <a href="/guild/{{ guild }}/shop" class="text-blue-400 hover:text-blue-300 flex items-center transition-colors duration-200">
+                            <span class="text-yellow-400 text-lg font-bold">{{{ guild_coins }}}</span>
+                            <button class="ml-2 bg-blue-600 text-white px-3 py-1.5 rounded-md hover:bg-blue-500 transition-colors duration-200">Shop</button>
+                        </a>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-medium">Website</span>
+                        <a href="{{ website }}" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">{{ website }}</a>
                     </div>
                 </div>
+            </div>
+            <!-- Clan Lore -->
+            <div class="bg-gray-800/90 rounded-xl shadow-2xl border border-gray-700 p-6 lg:col-span-2">
+                <h2 class="text-lg font-semibold text-red-400 mb-4">Clan Lore</h2>
+                <p class="text-gray-300 break-words">{{{ about }}}</p>
+            </div>
+            <!-- Clan Roster -->
+            <div class="bg-gray-800/90 rounded-xl shadow-2xl border border-gray-700 p-6 lg:col-span-2">
+                <h2 class="text-lg font-semibold text-red-400 mb-4">Clan Roster</h2>
+                <table class="w-full text-sm sm:text-base">
+                    <thead>
+                        <tr class="bg-gray-700">
+                            <th class="py-2 text-center text-red-400">Rank</th>
+                            <th class="py-2 text-center text-red-400">Name</th>
+                            <th class="py-2 text-center text-red-400">Score</th>
+                            <th class="py-2 text-center text-red-400">GP</th>
+                            <th class="py-2 text-center text-red-400">Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{{ guild_menbers }}}
+                    </tbody>
+                </table>
+            </div>
+            <!-- Clan Settings (Leader Only) -->
+            {{#if edit_state}}
+            <div class="bg-gray-800/90 rounded-xl shadow-2xl border border-gray-700 p-6 lg:col-span-3">
+                <h2 class="text-lg font-semibold text-red-400 mb-4">Clan Command Center</h2>
+                <form method="post" class="space-y-4">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="sQTr7DAK4WgJStF9jydizISlCGKK6jvnTx3V3KuBP5qEpp2ujgP0PRsSgJRY47vP" />
+                    <div>
+                        <label for="id_website_url" class="block text-sm font-medium mb-1 text-gray-300">Clan Website</label>
+                        <input type="url" name="website_url" value="{{ website }}" id="id_website_url" maxlength="255" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-describedby="website-help" />
+                        <span id="website-help" class="text-xs text-gray-400">Optional Clan Hub</span>
+                    </div>
+                    <div>
+                        <label for="id_photo_url" class="block text-sm font-medium mb-1 text-gray-300">Clan Banner URL</label>
+                        <input type="url" name="photo_url" value="{{ img }}" id="id_photo_url" maxlength="255" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-describedby="photo-help" />
+                        <span id="photo-help" class="text-xs text-gray-400">160x160, Upload to http://prntscr.com</span>
+                    </div>
+                    <div>
+                        <label for="id_page_bg_url" class="block text-sm font-medium mb-1 text-gray-300">Battlefield Background</label>
+                        <input type="url" name="page_bg_url" value="{{ fondo }}" id="id_page_bg_url" maxlength="255" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-describedby="bg-help" />
+                        <span id="bg-help" class="text-xs text-gray-400">Upload to prntscr.com © image url</span>
+                    </div>
+                    <div>
+                        <label for="id_description" class="block text-sm font-medium mb-1 text-gray-300">Clan Lore</label>
+                        <textarea name="description" id="id_description" rows="6" class="w-full bg-gray-700 text-white border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">{{ about }}</textarea>
+                    </div>
+                    <input type="submit" name="EDIT_SETTINGS" value="Update Clan" class="w-full bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-500 transition-colors duration-200" />
+                </form>
+            </div>
+            {{/if}}
+            <!-- Clan Chat -->
+            <div class="bg-gray-800/90 rounded-xl shadow-2xl border border-gray-700 p-6 lg:col-span-3">
+                <h2 class="text-lg font-semibold text-red-400 mb-4">Clan Chat</h2>
+                <div class="fb-comments" data-href="https://ThorBound.tk/guild/{{ guild }}" data-width="100%" data-num-posts="20" data-colorscheme="dark"></div>
             </div>
         </div>
     </main>
     <!-- Footer -->
-    <footer class="bg-gray-900 py-4 border-t border-gray-700">
+    <footer class="bg-gray-900/90 backdrop-blur-sm py-4 border-t border-gray-700">
         <div class="container mx-auto px-4 text-center text-sm text-gray-400">
-            © 2025 Lassie. All rights reserved. | <a href="/terms" class="text-blue-400 hover:text-blue-300">Terms</a> | <a href="/privacy" class="text-blue-400 hover:text-blue-300">Privacy</a>
+            © 2025 Lassie. All rights reserved. | <a href="/terms" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Terms</a> | <a href="/privacy" class="text-blue-400 hover:text-blue-300 transition-colors duration-200">Privacy</a> | Last Updated: 02:37 PM CEST, Jul 20, 2025
         </div>
     </footer>
 </body>
