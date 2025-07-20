@@ -47146,13 +47146,7 @@
         b;
 
       b = [
-        ["Inferno", "https://github.com/Ox18", "Spanish, English"],
-        ["Rafael", "https://github.com/JesusRafaelAreva", "Spanish, English"],
-        [
-          "Lulubot",
-          "https://github.com/luizxd0",
-          "English, Brazilian-Portuguese",
-        ],
+        ["Inferno", "info@lassie.vip", "Spanish, English"],
       ];
 
       for (var c = 0; c < b.length; c++) {
