@@ -1905,9 +1905,7 @@ a:active {
 }
 
 #CreateRoomPrivateCheckbox {
-    position: absolute;
-    left: 45px;
-    top: 64px
+    background: none;
 }
 
 #CreateRoomPlayers {
@@ -15268,7 +15266,7 @@ img.emoji {
 
 .s_Header {
     width: 100%;
-    padding: 16px 0;
+    padding: 6px 0;
     text-align: center;
   
     background: linear-gradient(to right, rgba(172, 242, 246, 0.2), rgba(255, 204, 255, 0.2));
