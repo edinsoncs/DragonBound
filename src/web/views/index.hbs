@@ -557,18 +557,35 @@
             </div>
       </div>
 
-      <input type="text" id="createRoomTitle" value="Hello World" maxlength="30">
       <div id="CreateRoomPrivateCheckbox" class="checkboxOff opacity_button"></div>
       <div id="CreateRoomPassword" class="hide">
         <input type="text" id="createRoomPasswordInput" value="" maxlength="10">
       </div>
 
-      <div id="CreateRoomNumPlayersPrev" class="buttonPrev opacity_button"></div>
-      <div id="CreateRoomNumPlayersNext" class="buttonNext opacity_button"></div>
-      <div id="CreateRoomPlayers" class="blackShadow2"></div>
-      <div id="CreateRoomModePrev" class="buttonPrev opacity_button"></div>
-      <div id="CreateRoomModeNext" class="buttonNext opacity_button"></div>
-      <div id="CreateRoomMode" class="blackShadow2"></div>
+      <section class="s_Room">
+            <div class="s_Room--Iz">
+                Number of players
+            </div>
+            <div>
+                <div id="CreateRoomNumPlayersPrev" class="buttonPrev opacity_button"></div>
+                <div id="CreateRoomNumPlayersNext" class="buttonNext opacity_button"></div>
+                <div id="CreateRoomPlayers" class="players4vB"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="s_Room--Iz">
+               Game Mode
+            </div>
+            <div>
+                <div id="CreateRoomModePrev" class="buttonPrev opacity_button"></div>
+                <div id="CreateRoomModeNext" class="buttonNext opacity_button"></div>
+                <div id="CreateRoomMode" class="gameModeBoss blackShadow2"></div>
+            </div>
+        </section>
+
+
+
       <div id="CreateRoomModeIcon" class="iconMode1"></div>
       <div id="CreateRoomModeText"></div>
       <div id="dialogCreateRoomButtonCancel" class="buttonCancel"></div>
