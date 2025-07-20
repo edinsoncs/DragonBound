@@ -139,10 +139,11 @@ a:active {
     height: 16px;
     color: #acf2f6;
     font-size: 12px;
-    background: transparent;
+    padding: 2px 4px;
+    background: rgb(255 255 255 / 18%);
     border: 1px solid transparent;
     -webkit-transform-origin: center bottom;
-    transform-origin: center bottom
+    transform-origin: center bottom;
 }
 
 #channelInput:focus {
@@ -253,11 +254,14 @@ a:active {
 #channel {
     position: absolute;
     left: 18px;
-    top: 458px;
+    top: 452px;
     width: 537px;
     height: 116px;
     font-size: 12px;
-    color: #acf2f6
+    border: 1px solid rgb(189 40 189);
+    border-radius: 10px;
+    color: #acf2f6;
+    box-shadow: inset 0 0 26px #b21db5;
 }
 
 #channel .viewport {
@@ -13600,7 +13604,10 @@ body .ui-tooltip {
     left: 17px;
     bottom: 4px;
     width: 85px;
-    background: #ddf
+    background: rgb(255 255 255 / 34%);
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
 }
 
 .fbfan {
