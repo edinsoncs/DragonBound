@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{guild}} - Lassie Guild</title>
+    <title>{{ guild }} - Lassie Guild</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/static/js/jquery-2.1.4.min.js"></script>
@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="/static/DragonBook/DragonBook.min.css?14" />
     <script src="/static/DragonBook/DragonBook.min.js?14"></script>
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{guild}} - Lassie Guild" />
-    <meta property="og:description" content="This is the guild page for {{guild}}. You can see the guild members and info here."/>
-    <meta property="og:image" content="{{img}}" />
-    <meta property="og:url" content="https://ThorBound.tk/guild/{{guild}}" />
+    <meta property="og:title" content="{{ guild }} - Lassie Guild" />
+    <meta property="og:description" content="This is the guild page for {{ guild }}. You can see the guild members and info here." />
+    <meta property="og:image" content="{{ img }}" />
+    <meta property="og:url" content="https://ThorBound.tk/guild/{{ guild }}" />
     <meta property="fb:app_id" content="" />
     <script async src=""></script>
     <script>
@@ -70,169 +70,181 @@
     {{#if fondo}}
     <style>
         body {
-            background: #3364a6 url({{fondo}}) no-repeat center center fixed;
+            background: #3364a6 url({{ fondo }}) no-repeat center center fixed;
             background-size: cover;
         }
     </style>
     {{/if}}
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+<body class="bg-gray-950 text-white min-h-screen flex flex-col font-sans antialiased">
     <div id="fb-root"></div>
-    <header class="bg-gray-800 shadow-md">
-        <div id="titleTable" class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
-            <div id="titleTableLeft" class="flex items-center space-x-2 mb-4 sm:mb-0">
-                <span id="icon"></span>
-                <span id="titleText" class="text-sm sm:text-base">
-                    <a href="/" class="text-blue-400 hover:text-blue-300">ThorBound</a> &gt;
-                    <a href="/guild" class="text-blue-400 hover:text-blue-300">Guild</a> &gt;
-                    <a href="/guild/{{guild}}" class="text-blue-400 hover:text-blue-300">{{guild}}</a>
-                </span>
+    <!-- Header -->
+    <header class="bg-gray-900 shadow-2xl sticky top-0 z-20 border-b border-gray-800">
+        <div id="titleTable" class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <div id="titleTableLeft" class="flex items-center space-x-4 mb-4 sm:mb-0">
+                <span id="icon" class="w-8 h-8 bg-gray-700 rounded-full"></span>
+                <nav id="titleText" class="text-base font-medium" role="navigation">
+                    <a href="/" class="text-blue-300 hover:text-blue-200 transition-all duration-300">ThorBound</a> >
+                    <a href="/guild" class="text-blue-300 hover:text-blue-200 transition-all duration-300">Guild</a> >
+                    <a href="/guild/{{ guild }}" class="text-blue-300 hover:text-blue-200 transition-all duration-300">{{ guild }}</a>
+                </nav>
             </div>
-            <div id="titleTableRight" class="flex space-x-4 text-sm sm:text-base">
+            <div id="titleTableRight" class="flex items-center space-x-4 text-base font-medium">
                 {{#if login}}
-                <a href="/user/{{login_id}}" class="text-blue-400 hover:text-blue-300">{{login_id}}</a>
-                <span>|</span>
-                <a href="/settings" class="text-blue-400 hover:text-blue-300">Settings</a>
-                <span>|</span>
-                <a href="/logout?next=/{{guild}}/{{guild}}" class="text-blue-400 hover:text-blue-300">Logout</a>
+                <a href="/user/{{ login_id }}" class="text-blue-300 hover:text-blue-200 transition-all duration-300">{{ login_id }}</a>
+                <span class="text-gray-500">|</span>
+                <a href="/settings" class="text-blue-300 hover:text-blue-200 transition-all duration-300">Settings</a>
+                <span class="text-gray-500">|</span>
+                <a href="/logout?next=/{{ guild }}/{{ guild }}" class="text-blue-300 hover:text-blue-200 transition-all duration-300">Logout</a>
                 {{else}}
-                <a href="/login?next=/guild/{{{guild}}}/shop" class="text-blue-400 hover:text-blue-300">Login</a>
+                <a href="/login?next=/guild/{{{ guild }}/shop" class="text-blue-300 hover:text-blue-200 transition-all duration-300">Login</a>
                 {{/if}}
             </div>
         </div>
     </header>
-    <main class="container mx-auto px-4 py-6 flex-grow">
-        <div id="mainBox" class="flex flex-col lg:flex-row gap-6">
-            <!-- Left Bar (Info, Guild Likes, About, Members, Settings) -->
-            <div id="leftBar" class="w-full lg:w-1/3 space-y-6">
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-10 flex-grow">
+        <div id="mainBox" class="flex flex-col lg:flex-row gap-10">
+            <!-- Left Bar -->
+            <div id="leftBar" class="w-full lg:w-1/3 space-y-8">
                 <!-- Profile Header -->
-                <div id="topBar" class="bg-gray-800 rounded-lg shadow-lg p-4">
-                    <div id="photoDiv" class="PhotoDiv w-full h-40 sm:h-48 rounded-md overflow-hidden mb-4"></div>
-                    <script>
-                        Img2Div2($('#photoDiv'), '{{img}}')
-                    </script>
-                    <div class="pageCoverTitle text-center">
-                        <span id="profileName" class="title1 block">
-                            <a class="noUnderline text-blue-400 hover:text-blue-300" href="/guild/{{guild}}">{{guild}}</a>
+                <div id="topBar" class="bg-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-800">
+                    <div id="photoDiv" class="PhotoDiv w-full h-52 sm:h-72 bg-gray-800 rounded-t-2xl overflow-hidden relative">
+                        <script>
+                            Img2Div2($('#photoDiv'), '{{ img }}')
+                        </script>
+                    </div>
+                    <div class="pageCoverTitle text-center py-8">
+                        <span id="profileName" class="title1 block text-4xl sm:text-5xl font-bold">
+                            <a class="noUnderline text-blue-300 hover:text-blue-200 transition-all duration-300" href="/guild/{{ guild }}">{{ guild }}</a>
                         </span>
                     </div>
                 </div>
                 <!-- Info Box -->
-                <div class="Box bg-gray-800 rounded-lg shadow-lg">
-                    <div class="boxTitle bg-gray-700 text-lg font-semibold p-3 rounded-t-lg">Info</div>
-                    <div class="boxBody p-4">
-                        <table class="boxTable w-full text-sm">
-                            <tr>
-                                <td class="py-2 font-bold">Name</td>
-                                <td class="py-2">{{guild}}</td>
+                <div class="Box bg-gray-900 rounded-2xl shadow-2xl border border-gray-800">
+                    <div class="boxTitle bg-gradient-to-r from-gray-800 to-gray-700 text-lg font-semibold p-5 rounded-t-2xl">Info</div>
+                    <div class="boxBody p-6">
+                        <table class="boxTable w-full text-base">
+                            <tr class="border-b border-gray-800 even:bg-gray-850">
+                                <td class="py-3 font-semibold">Name</td>
+                                <td class="py-3">{{ guild }}</td>
                             </tr>
-                            <tr>
-                                <td class="py-2 font-bold">GuildID</td>
-                                <td class="py-2">{{GuildId}}</td>
+                            <tr class="border-b border-gray-800 even:bg-gray-850">
+                                <td class="py-3 font-semibold">GuildID</td>
+                                <td class="py-3">{{ GuildId }}</td>
                             </tr>
-                            <tr>
-                                <td class="py-2 font-bold">Created</td>
-                                <td class="py-2">Ener. 26, 2018</td>
+                            <tr class="border-b border-gray-800 even:bg-gray-850">
+                                <td class="py-3 font-semibold">Created</td>
+                                <td class="py-3">Ener. 26, 2018</td>
                             </tr>
-                            <tr>
-                                <td class="py-2 font-bold">Created By</td>
-                                <td class="py-2"><a href="/user/{{guild_lider}}" class="text-blue-400 hover:text-blue-300">{{guild_lider}}</a></td>
+                            <tr class="border-b border-gray-800 even:bg-gray-850">
+                                <td class="py-3 font-semibold">Created By</td>
+                                <td class="py-3"><a href="/user/{{ guild_lider }}" class="text-blue-300 hover:text-blue-200 transition-all duration-300">{{ guild_lider }}</a></td>
                             </tr>
-                            <tr>
-                                <td class="py-2 font-bold">Website</td>
-                                <td class="py-2 break-words"><a href="{{website}}" target="_blank" class="text-blue-400 hover:text-blue-300">{{website}}</a></td>
+                            <tr class="border-b border-gray-800 even:bg-gray-850">
+                                <td class="py-3 font-semibold">Website</td>
+                                <td class="py-3 break-words"><a href="{{ website }}" target="_blank" class="text-blue-300 hover:text-blue-200 transition-all duration-300">{{ website }}</a></td>
                             </tr>
-                            <tr>
-                                <td class="py-2 font-bold">Tournament Points</td>
-                                <td class="py-2">{{{points}}}</td>
+                            <tr class="border-b border-gray-800 even:bg-gray-850">
+                                <td class="py-3 font-semibold">Tournament Points</td>
+                                <td class="py-3">{{{ points }}}</td>
                             </tr>
-                            <tr>
-                                <td class="py-2 font-bold">Guild Coins</td>
-                                <td class="py-2">
-                                    <a href="/guild/{{guild}}/shop" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                        {{{guild_coins}}}
-                                        <button class="ml-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-500">Guild Shop</button>
+                            <tr class="even:bg-gray-850">
+                                <td class="py-3 font-semibold">Guild Coins</td>
+                                <td class="py-3">
+                                    <a href="/guild/{{ guild }}/shop" class="text-blue-300 hover:text-blue-200 flex items-center transition-all duration-300">
+                                        {{{ guild_coins }}}
+                                        <button class="ml-4 bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-500 hover:scale-105 transition-all duration-300">Guild Shop</button>
                                     </a>
                                 </td>
                             </tr>
                         </table>
-                        {{{coins_images}}}
+                        {{{ coins_images }}}
                     </div>
                 </div>
                 <!-- Guild Likes Box -->
-                <div class="Box bg-gray-800 rounded-lg shadow-lg">
-                    <div class="boxTitle bg-gray-700 text-lg font-semibold p-3 rounded-t-lg">Guild Likes</div>
-                    <div class="boxBody p-4">
+                <div class="Box bg-gray-900 rounded-2xl shadow-2xl border border-gray-800">
+                    <div class="boxTitle bg-gradient-to-r from-gray-800 to-gray-700 text-lg font-semibold p-5 rounded-t-2xl">Guild Likes</div>
+                    <div class="boxBody p-6">
                         <script>
                             document.write(
-                                '<div class="fb-like" data-href="https://ThorBound.tk/g/{{guild}}" data-send="true" data-width="293" data-show-faces="true" data-colorscheme="dark"></div>'
+                                '<div class="fb-like" data-href="https://ThorBound.tk/g/{{ guild }}" data-send="true" data-width="293" data-show-faces="true" data-colorscheme="dark"></div>'
                             )
                         </script>
                     </div>
                 </div>
                 <!-- About Box -->
-                <div class="Box bg-gray-800 rounded-lg shadow-lg">
-                    <div class="boxTitle bg-gray-700 text-lg font-semibold p-3 rounded-t-lg">About</div>
-                    <div class="boxBody p-4 break-words">{{{about}}}</div>
+                <div class="Box bg-gray-900 rounded-2xl shadow-2xl border border-gray-800">
+                    <div class="boxTitle bg-gradient-to-r from-gray-800 to-gray-700 text-lg font-semibold p-5 rounded-t-2xl">About</div>
+                    <div class="boxBody p-6 break-words">{{{ about }}}</div>
                 </div>
                 <!-- Members / Guild Ranking Box -->
-                <div class="Box bg-gray-800 rounded-lg shadow-lg">
-                    <div class="boxTitle bg-gray-700 text-lg font-semibold p-3 rounded-t-lg">Members / Guild Ranking</div>
-                    <div class="boxBody p-0 text-sm">
+                <div class="Box bg-gray-900 rounded-2xl shadow-2xl border border-gray-800">
+                    <div class="boxTitle bg-gradient-to-r from-gray-800 to-gray-700 text-lg font-semibold p-5 rounded-t-2xl">Members / Guild Ranking</div>
+                    <div class="boxBody p-0 text-base">
                         <table class="boxTable w-full">
-                            <tr class="text-center bg-gray-700">
-                                <td class="py-2"></td>
-                                <td class="py-2">Name</td>
-                                <td class="py-2">S</td>
-                                <td class="py-2">GP</td>
-                                <td class="py-2">L</td>
-                            </tr>
-                            {{{guild_menbers}}}
+                            <thead>
+                                <tr class="text-center bg-gray-800">
+                                    <th class="py-4"></th>
+                                    <th class="py-4">Name</th>
+                                    <th class="py-4">S</th>
+                                    <th class="py-4">GP</th>
+                                    <th class="py-4">L</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{{ guild_menbers }}}
+                            </tbody>
                         </table>
                     </div>
                 </div>
                 <!-- Edit Guild Settings (Leader Only) -->
                 {{#if edit_state}}
-                <div class="Box BoxSecret bg-gray-800 rounded-lg shadow-lg">
-                    <div class="boxTitle bg-gray-700 text-lg font-semibold p-3 rounded-t-lg">Edit Guild Settings (Leader Only)</div>
-                    <div class="boxBody p-4">
-                        <form method="post" id="guildSettingsForm" class="space-y-4">
-                            <input type='hidden' name='csrfmiddlewaretoken' value='sQTr7DAK4WgJStF9jydizISlCGKK6jvnTx3V3KuBP5qEpp2ujgP0PRsSgJRY47vP'/>
+                <div class="Box BoxSecret bg-gray-900 rounded-2xl shadow-2xl border border-gray-800">
+                    <div class="boxTitle bg-gradient-to-r from-gray-800 to-gray-700 text-lg font-semibold p-5 rounded-t-2xl">Edit Guild Settings (Leader Only)</div>
+                    <div class="boxBody p-6">
+                        <form method="post" id="guildSettingsForm" class="space-y-6">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="sQTr7DAK4WgJStF9jydizISlCGKK6jvnTx3V3KuBP5qEpp2ujgP0PRsSgJRY47vP" />
                             <div>
-                                <label for="id_website_url" class="block text-sm font-bold mb-1">Website / FB Group / Forums URL:</label>
-                                <input type="url" name="website_url" value="{{website}}" id="id_website_url" maxlength="255" class="w-full bg-gray-700 text-gray-100 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                                <label for="id_website_url" class="block text-base font-semibold mb-2">Website / FB Group / Forums URL:</label>
+                                <input type="url" name="website_url" value="{{ website }}" id="id_website_url" maxlength="255" class="w-full bg-gray-800 text-white border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300" aria-describedby="website-help" />
                             </div>
                             <div>
-                                <label for="id_photo_url" class="block text-sm font-bold mb-1">Logo Image URL:</label>
-                                <input type="url" name="photo_url" value="{{img}}" id="id_photo_url" maxlength="255" class="w-full bg-gray-700 text-gray-100 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                                <span class="helptext text-xs text-gray-400">160x160, Upload to http://prntscr.com</span>
+                                <label for="id_photo_url" class="block text-base font-semibold mb-2">Logo Image URL:</label>
+                                <input type="url" name="photo_url" value="{{ img }}" id="id_photo_url" maxlength="255" class="w-full bg-gray-800 text-white border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300" aria-describedby="photo-help" />
+                                <span id="photo-help" class="helptext text-sm text-gray-300 mt-1">160x160, Upload to http://prntscr.com</span>
                             </div>
                             <div>
-                                <label for="id_page_bg_url" class="block text-sm font-bold mb-1">Background Image URL:</label>
-                                <input type="url" name="page_bg_url" value="{{fondo}}" id="id_page_bg_url" maxlength="255" class="w-full bg-gray-700 text-gray-100 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
-                                <span class="helptext text-xs text-gray-400">Upload to prntscr.com © image url</span>
+                                <label for="id_page_bg_url" class="block text-base font-semibold mb-2">Background Image URL:</label>
+                                <input type="url" name="page_bg_url" value="{{ fondo }}" id="id_page_bg_url" maxlength="255" class="w-full bg-gray-800 text-white border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300" aria-describedby="bg-help" />
+                                <span id="bg-help" class="helptext text-sm text-gray-300 mt-1">Upload to prntscr.com © image url</span>
                             </div>
                             <div>
-                                <label for="id_description" class="block text-sm font-bold mb-1">About:</label>
-                                <textarea name="description" id="id_description" rows="10" cols="40" maxlength="1000" class="w-full bg-gray-700 text-gray-100 border border-gray-600 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">{{about}}</textarea>
+                                <label for="id_description" class="block text-base font-semibold mb-2">About:</label>
+                                <textarea name="description" id="id_description" rows="10" cols="40" maxlength="1000" class="w-full bg-gray-800 text-white border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300" aria-describedby="description-help">{{ about }}</textarea>
                             </div>
-                            <input type="submit" name="EDIT_SETTINGS" value="Save" class="w-full sm:w-auto bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-500 cursor-pointer"/>
+                            <input type="submit" name="EDIT_SETTINGS" value="Save" class="w-full sm:w-auto bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 hover:scale-105 transition-all duration-300 font-semibold cursor-pointer" />
                         </form>
                     </div>
                 </div>
                 {{/if}}
             </div>
-            <!-- Right Bar (Guild Chat) -->
+            <!-- Right Bar -->
             <div id="rightBar" class="w-full lg:w-2/3">
-                <div class="Box bg-gray-800 rounded-lg shadow-lg">
-                    <div class="boxTitle bg-gray-700 text-lg font-semibold p-3 rounded-t-lg">Guild Chat</div>
-                    <div class="boxBody p-4">
-                        <div class="fb-comments" data-href="https://ClassicBound.net/guild/{{guild}}" data-width="100%" data-num-posts="20" data-colorscheme="light"></div>
+                <div class="Box bg-gray-900 rounded-2xl shadow-2xl border border-gray-800">
+                    <div class="boxTitle bg-gradient-to-r from-gray-800 to-gray-700 text-lg font-semibold p-5 rounded-t-2xl">Guild Chat</div>
+                    <div class="boxBody p-6">
+                        <div class="fb-comments" data-href="https://ClassicBound.net/guild/{{ guild }}" data-width="100%" data-num-posts="20" data-colorscheme="dark"></div>
                     </div>
                 </div>
-                <div class="clearFloat"></div>
             </div>
         </div>
     </main>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 py-6 mt-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center text-gray-300 text-base">
+            © 2025 ThorBound. All rights reserved.
+        </div>
+    </footer>
 </body>
 </html>
