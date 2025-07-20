@@ -1523,15 +1523,16 @@ a:active {
 }
 
 #createRoomTitle {
-    position: absolute;
-    left: 114px;
-    top: 41px;
-    width: 192px;
-    background-color: transparent;
-    color: #acf2f6;
-    border: 0;
     height: 15px;
-    padding-left: 4px
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #acf2f6;
+    outline: none;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease;
 }
 
 #BrokerLogout {
@@ -15284,4 +15285,20 @@ img.emoji {
     color: #ffffff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
+  }
+
+
+  .s_Title{
+    display: flex;
+    margin: 11px 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .s_Txt{
+    font-size: 14px;
+    font-weight: 600;
+    color: #acf2f6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0.5px;
+    padding-left: 4px;
   }
