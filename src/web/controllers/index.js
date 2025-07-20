@@ -61,7 +61,7 @@ router.use("/gift_gm", require("./ava"));
 router.use("/gift_owners", require("./owners"));
 router.use("/z", require("./ScreenShot"));
 router.use("/r", require("./view_replay"));
-//router.use('/accounts/password/reset/', require('./password_account'));
+router.use('/accounts/password/reset/', require('./password_account'));
 router.use("/cash", require("./cash"));
 router.use("/cash2", require("./cash2"));
 router.use("/chat", require("./chat"));
