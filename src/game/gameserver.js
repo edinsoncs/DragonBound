@@ -94,7 +94,7 @@ module.exports = class GameServer {
           ]);
         }
         if (self.roomGPS === true) {
-          data.push(["Desde ahora las salas menores que 5 ganan + GPS", "", 6]);
+          data.push(["From now on, rooms with fewer than 5 get + GPS", "", 6]);
         }
         if (self.name === "Holiday") {
           data.push([
@@ -134,18 +134,18 @@ module.exports = class GameServer {
         /*data.push(['(trophy) GUILD PRIX J.D OFF | para más info: ya.mba/2pN  | 25 de Abril (trophy)', '', 9]);*/
         if (account.player.rank === 0) {
           data.push([
-            "Anota muy bien tu Pin User, te servira para distintos problemas ==-> [" +
+            "Write down your PIN User carefully, it will help you with various problems ==-> [" +
               account.player.my_pin_user +
               "]",
             "",
             9,
           ]);
         }
-        data.push(["Bienvenido: " + account.player.game_id + " :)  ", "", 9]);
+        data.push(["Welcome: " + account.player.game_id + " :)  ", "", 9]);
         data.push([
-          "Hola " +
+          "HI " +
             account.player.game_id +
-            " enteraté de nuestro nuevo (gift) Evento (gift) en => https://t.me/lassiegame :)",
+            " Find out about our new (gift) Event (gift) at => https://t.me/lassiegame :)",
           "",
           17,
         ]);
