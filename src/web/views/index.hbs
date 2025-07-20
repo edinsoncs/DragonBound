@@ -544,11 +544,25 @@
     </div>
     <div id="dialogCreateRoom" class="NoSelect">
       <!-- pisdiet -->
+
+      <div class="s_Header">
+        <h2>Create Room</h2>
+      </div>
+      <div class="s_Title">
+            <div className="s_Txt">
+                Name
+            </div>
+            <div>
+                <input type="text" id="createRoomTitle" value="Hello World" maxlength="30">
+            </div>
+      </div>
+
       <input type="text" id="createRoomTitle" value="Hello World" maxlength="30">
       <div id="CreateRoomPrivateCheckbox" class="checkboxOff opacity_button"></div>
       <div id="CreateRoomPassword" class="hide">
         <input type="text" id="createRoomPasswordInput" value="" maxlength="10">
       </div>
+
       <div id="CreateRoomNumPlayersPrev" class="buttonPrev opacity_button"></div>
       <div id="CreateRoomNumPlayersNext" class="buttonNext opacity_button"></div>
       <div id="CreateRoomPlayers" class="blackShadow2"></div>
